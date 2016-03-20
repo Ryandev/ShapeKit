@@ -1,1 +1,2 @@
-github "Ryandev/spatialite-iOS" "40debc4e126c366bb75fd25977116b7afe35dccb"
+github "Ryandev/Proj4-iOS" == 4.9.2
+github "Ryandev/GEOS-iOS" == 3.5.0
