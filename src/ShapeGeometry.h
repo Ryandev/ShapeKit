@@ -1,0 +1,37 @@
+/**
+ @file ShapeKit
+ @author Michael Weisman
+ @editor Ryan Powell
+ @license GNU Lesser General Public Licence
+ */
+
+
+#import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
+#import <UIKit/UIKit.h>
+
+#import "LocationPoint.h"
+
+
+/** 
+ @brief ShapeGeometry is an abstract class that holds generic information about your geometry.
+ */
+@interface ShapeGeometry : NSObject
+
+@property (readonly, copy) NSString *wkt;
+@property (readonly, copy) NSString *wkb;
+@property (readonly, copy) NSString *geomType;
+@property (readonly, copy) NSString *projDefinition;
+@property (readonly) void *geosHandle;
+@property (readonly) NSArray <LocationPoint*> *coordinates;
+
+
+-(id) initWithWKT:(NSString*)wkt;
+-(id) initWithWKB:(NSData*)wkb;
+-(id) initWithGeosGeometry:(void*)geom;
+
++(instancetype) geometryWithWKT:(NSString*)wkt;
++(instancetype) geometryWithWKB:(NSData*)wkb;
++(instancetype) geometryWithGeosGeometry:(void*)geom;
+
+@end

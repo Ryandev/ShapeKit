@@ -6,328 +6,183 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		CD345F2016F7630600B69077 /* ShapeKit documentation */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = CD345F2316F7630600B69077 /* Build configuration list for PBXAggregateTarget "ShapeKit documentation" */;
-			buildPhases = (
-				CD345F2416F7630A00B69077 /* ShellScript */,
-			);
-			dependencies = (
-			);
-			name = "ShapeKit documentation";
-			productName = Documentation;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
-		71D0AD4830CF417DAEAF69FF /* libPods-ShapeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C32FF98E8643EB862CBB30 /* libPods-ShapeKit.a */; };
-		CD90C1701668A378006E5D8F /* ShapeKitFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90C1671668A36F006E5D8F /* ShapeKitFactory.m */; };
-		CD90C1711668A378006E5D8F /* ShapeKitGeometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = CD90C1691668A36F006E5D8F /* ShapeKitGeometry.mm */; };
-		CD90C1721668A378006E5D8F /* ShapeKitGeometry+Predicates.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90C16B1668A36F006E5D8F /* ShapeKitGeometry+Predicates.m */; };
-		CD90C1731668A378006E5D8F /* ShapeKitGeometry+Topology.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90C16D1668A36F006E5D8F /* ShapeKitGeometry+Topology.m */; };
-		CD90C1741668A378006E5D8F /* ShapeKitPolyline+Linearref.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90C16F1668A36F006E5D8F /* ShapeKitPolyline+Linearref.m */; };
-		CD90C1751668A37E006E5D8F /* ShapeKit.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD90C1651668A36F006E5D8F /* ShapeKit.h */; };
-		CD90C1761668A37E006E5D8F /* ShapeKitFactory.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD90C1661668A36F006E5D8F /* ShapeKitFactory.h */; };
-		CD90C1771668A37E006E5D8F /* ShapeKitGeometry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD90C1681668A36F006E5D8F /* ShapeKitGeometry.h */; };
-		CD90C1781668A37E006E5D8F /* ShapeKitGeometry+Predicates.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD90C16A1668A36F006E5D8F /* ShapeKitGeometry+Predicates.h */; };
-		CD90C1791668A384006E5D8F /* ShapeKitGeometry+Topology.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD90C16C1668A36F006E5D8F /* ShapeKitGeometry+Topology.h */; };
-		CD90C17A1668A384006E5D8F /* ShapeKitPolyline+Linearref.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CD90C16E1668A36F006E5D8F /* ShapeKitPolyline+Linearref.h */; };
-		CDA9A76B1667C87A0008D661 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA9A76A1667C87A0008D661 /* Foundation.framework */; };
-		CDE3B2B81983C00400DCC7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA9A76A1667C87A0008D661 /* Foundation.framework */; };
-		CDE3B2BA1983C00400DCC7BA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3B2B91983C00400DCC7BA /* CoreGraphics.framework */; };
-		CDE3B2BC1983C00400DCC7BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3B2BB1983C00400DCC7BA /* UIKit.framework */; };
-		CDE3B2D11983C00400DCC7BA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3B2D01983C00400DCC7BA /* XCTest.framework */; };
-		CDE3B2D21983C00500DCC7BA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA9A76A1667C87A0008D661 /* Foundation.framework */; };
-		CDE3B2D31983C00500DCC7BA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDE3B2BB1983C00400DCC7BA /* UIKit.framework */; };
-		CDE3B2DB1983C00500DCC7BA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDE3B2D91983C00500DCC7BA /* InfoPlist.strings */; };
-		CDE3B2DD1983C00500DCC7BA /* ShapeKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3B2DC1983C00500DCC7BA /* ShapeKitDemoTests.m */; };
-		CDE3B2FF1983C00E00DCC7BA /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE3B2EB1983C00E00DCC7BA /* MainWindow.xib */; };
-		CDE3B3001983C00E00DCC7BA /* NSString+HexToData.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3B2ED1983C00E00DCC7BA /* NSString+HexToData.m */; };
-		CDE3B3011983C00E00DCC7BA /* PlanID20-82.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDE3B2EE1983C00E00DCC7BA /* PlanID20-82.plist */; };
-		CDE3B3021983C00E00DCC7BA /* PlanID20-83.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDE3B2EF1983C00E00DCC7BA /* PlanID20-83.plist */; };
-		CDE3B3031983C00E00DCC7BA /* PlanID20-84.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDE3B2F01983C00E00DCC7BA /* PlanID20-84.plist */; };
-		CDE3B3041983C00E00DCC7BA /* ShapeKit+MapKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3B2F21983C00E00DCC7BA /* ShapeKit+MapKit.m */; };
-		CDE3B3051983C00E00DCC7BA /* ShapeKitAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3B2F41983C00E00DCC7BA /* ShapeKitAppDelegate.m */; };
-		CDE3B3061983C00E00DCC7BA /* ShapeKitDemo-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CDE3B2F51983C00E00DCC7BA /* ShapeKitDemo-Info.plist */; };
-		CDE3B3071983C00E00DCC7BA /* ShapeKitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE3B2F91983C00E00DCC7BA /* ShapeKitViewController.m */; };
-		CDE3B3081983C00E00DCC7BA /* ShapeKitViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE3B2FA1983C00E00DCC7BA /* ShapeKitViewController.xib */; };
-		CDE3B30F1984249800DCC7BA /* main.mm in Sources */ = {isa = PBXBuildFile; fileRef = CDE3B30E1984249800DCC7BA /* main.mm */; };
-		CDE3B3181984279D00DCC7BA /* libShapeKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CDA9A7671667C87A0008D661 /* libShapeKit.a */; };
+		B73273B61C9DFDF000AB3FE9 /* ShapeKit.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273A81C9DFDF000AB3FE9 /* ShapeKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73273BA1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273AD1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73273BB1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273AE1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.m */; };
+		B73273BC1C9DFDF000AB3FE9 /* ShapeGeometry+Topology.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273AF1C9DFDF000AB3FE9 /* ShapeGeometry+Topology.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73273BD1C9DFDF000AB3FE9 /* ShapeGeometry+Topology.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273B01C9DFDF000AB3FE9 /* ShapeGeometry+Topology.m */; };
+		B73273BE1C9DFDF000AB3FE9 /* ShapeGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273B11C9DFDF000AB3FE9 /* ShapeGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73273BF1C9DFDF000AB3FE9 /* ShapeGeometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = B73273B21C9DFDF000AB3FE9 /* ShapeGeometry.mm */; };
+		B73273CC1C9E023B00AB3FE9 /* geos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73273CA1C9E023B00AB3FE9 /* geos.framework */; };
+		B73273CD1C9E023B00AB3FE9 /* proj4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73273CB1C9E023B00AB3FE9 /* proj4.framework */; };
+		B73273D01C9E065A00AB3FE9 /* LocationPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273CE1C9E065A00AB3FE9 /* LocationPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73273D11C9E065A00AB3FE9 /* LocationPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273CF1C9E065A00AB3FE9 /* LocationPoint.m */; };
+		B73273D41C9E0B1000AB3FE9 /* GEOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273D21C9E0B1000AB3FE9 /* GEOS.h */; };
+		B73273D51C9E0B1000AB3FE9 /* GEOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273D31C9E0B1000AB3FE9 /* GEOS.m */; };
+		B73273D81C9E0D8C00AB3FE9 /* ShapePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273D61C9E0D8C00AB3FE9 /* ShapePoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73273D91C9E0D8C00AB3FE9 /* ShapePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273D71C9E0D8C00AB3FE9 /* ShapePoint.m */; };
+		B73273DC1C9E0D9700AB3FE9 /* ShapePolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273DA1C9E0D9700AB3FE9 /* ShapePolyline.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73273DD1C9E0D9700AB3FE9 /* ShapePolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273DB1C9E0D9700AB3FE9 /* ShapePolyline.m */; };
+		B73273E01C9E0EBD00AB3FE9 /* ShapePolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273DE1C9E0EBD00AB3FE9 /* ShapePolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73273E11C9E0EBD00AB3FE9 /* ShapePolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273DF1C9E0EBD00AB3FE9 /* ShapePolygon.m */; };
+		B73273E41C9E0FA600AB3FE9 /* ShapeMultiGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273E21C9E0FA600AB3FE9 /* ShapeMultiGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B73273E51C9E0FA600AB3FE9 /* ShapeMultiGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273E31C9E0FA600AB3FE9 /* ShapeMultiGeometry.m */; };
+		B73273E81C9E318D00AB3FE9 /* NSData+GEOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273E61C9E318D00AB3FE9 /* NSData+GEOS.h */; };
+		B73273E91C9E318D00AB3FE9 /* NSData+GEOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273E71C9E318D00AB3FE9 /* NSData+GEOS.m */; };
+		B73273EC1C9E319800AB3FE9 /* NSString+GEOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273EA1C9E319800AB3FE9 /* NSString+GEOS.h */; };
+		B73273ED1C9E319800AB3FE9 /* NSString+GEOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273EB1C9E319800AB3FE9 /* NSString+GEOS.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		CDE3B2D41983C00500DCC7BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CDA9A75E1667C87A0008D661 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CDE3B2B61983C00400DCC7BA;
-			remoteInfo = ShapeKitDemo;
-		};
-		CDE3B30C198422A600DCC7BA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CDA9A75E1667C87A0008D661 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CDA9A7661667C87A0008D661;
-			remoteInfo = ShapeKit;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		CDA9A7651667C87A0008D661 /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
-			dstSubfolderSpec = 16;
-			files = (
-				CD90C1791668A384006E5D8F /* ShapeKitGeometry+Topology.h in CopyFiles */,
-				CD90C17A1668A384006E5D8F /* ShapeKitPolyline+Linearref.h in CopyFiles */,
-				CD90C1751668A37E006E5D8F /* ShapeKit.h in CopyFiles */,
-				CD90C1761668A37E006E5D8F /* ShapeKitFactory.h in CopyFiles */,
-				CD90C1771668A37E006E5D8F /* ShapeKitGeometry.h in CopyFiles */,
-				CD90C1781668A37E006E5D8F /* ShapeKitGeometry+Predicates.h in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		3A947EB114C64337BC591145 /* Pods-ShapeKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShapeKit.xcconfig"; path = "Pods/Pods-ShapeKit.xcconfig"; sourceTree = "<group>"; };
-		72C32FF98E8643EB862CBB30 /* libPods-ShapeKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShapeKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9127DBD9F13D44A4A2CBF901 /* libPods-ShapeKitDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ShapeKitDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BDBB71E3599C43EABE38813C /* Pods-ShapeKitDemo.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShapeKitDemo.xcconfig"; path = "Pods/Pods-ShapeKitDemo.xcconfig"; sourceTree = "<group>"; };
-		CD90C1651668A36F006E5D8F /* ShapeKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeKit.h; sourceTree = "<group>"; };
-		CD90C1661668A36F006E5D8F /* ShapeKitFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeKitFactory.h; sourceTree = "<group>"; };
-		CD90C1671668A36F006E5D8F /* ShapeKitFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeKitFactory.m; sourceTree = "<group>"; };
-		CD90C1681668A36F006E5D8F /* ShapeKitGeometry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeKitGeometry.h; sourceTree = "<group>"; };
-		CD90C1691668A36F006E5D8F /* ShapeKitGeometry.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ShapeKitGeometry.mm; sourceTree = "<group>"; };
-		CD90C16A1668A36F006E5D8F /* ShapeKitGeometry+Predicates.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShapeKitGeometry+Predicates.h"; sourceTree = "<group>"; };
-		CD90C16B1668A36F006E5D8F /* ShapeKitGeometry+Predicates.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ShapeKitGeometry+Predicates.m"; sourceTree = "<group>"; };
-		CD90C16C1668A36F006E5D8F /* ShapeKitGeometry+Topology.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShapeKitGeometry+Topology.h"; sourceTree = "<group>"; };
-		CD90C16D1668A36F006E5D8F /* ShapeKitGeometry+Topology.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ShapeKitGeometry+Topology.m"; sourceTree = "<group>"; };
-		CD90C16E1668A36F006E5D8F /* ShapeKitPolyline+Linearref.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShapeKitPolyline+Linearref.h"; sourceTree = "<group>"; };
-		CD90C16F1668A36F006E5D8F /* ShapeKitPolyline+Linearref.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "ShapeKitPolyline+Linearref.m"; sourceTree = "<group>"; };
-		CD90C1831668AFFE006E5D8F /* ShapeKitPrivateInterface.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShapeKitPrivateInterface.h; sourceTree = "<group>"; };
-		CDA9A7671667C87A0008D661 /* libShapeKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libShapeKit.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDA9A76A1667C87A0008D661 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		CDA9A76E1667C87A0008D661 /* ShapeKit-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ShapeKit-Prefix.pch"; sourceTree = "<group>"; };
-		CDE3B2B71983C00400DCC7BA /* ShapeKitDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShapeKitDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDE3B2B91983C00400DCC7BA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		CDE3B2BB1983C00400DCC7BA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		CDE3B2CF1983C00400DCC7BA /* ShapeKitDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShapeKitDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CDE3B2D01983C00400DCC7BA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		CDE3B2D81983C00500DCC7BA /* ShapeKitDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ShapeKitDemoTests-Info.plist"; sourceTree = "<group>"; };
-		CDE3B2DA1983C00500DCC7BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CDE3B2DC1983C00500DCC7BA /* ShapeKitDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShapeKitDemoTests.m; sourceTree = "<group>"; };
-		CDE3B2E81983C00E00DCC7BA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		CDE3B2EA1983C00E00DCC7BA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CDE3B2EB1983C00E00DCC7BA /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
-		CDE3B2EC1983C00E00DCC7BA /* NSString+HexToData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+HexToData.h"; sourceTree = "<group>"; };
-		CDE3B2ED1983C00E00DCC7BA /* NSString+HexToData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+HexToData.m"; sourceTree = "<group>"; };
-		CDE3B2EE1983C00E00DCC7BA /* PlanID20-82.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "PlanID20-82.plist"; sourceTree = "<group>"; };
-		CDE3B2EF1983C00E00DCC7BA /* PlanID20-83.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "PlanID20-83.plist"; sourceTree = "<group>"; };
-		CDE3B2F01983C00E00DCC7BA /* PlanID20-84.plist */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "PlanID20-84.plist"; sourceTree = "<group>"; };
-		CDE3B2F11983C00E00DCC7BA /* ShapeKit+MapKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShapeKit+MapKit.h"; sourceTree = "<group>"; };
-		CDE3B2F21983C00E00DCC7BA /* ShapeKit+MapKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShapeKit+MapKit.m"; sourceTree = "<group>"; };
-		CDE3B2F31983C00E00DCC7BA /* ShapeKitAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeKitAppDelegate.h; sourceTree = "<group>"; };
-		CDE3B2F41983C00E00DCC7BA /* ShapeKitAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeKitAppDelegate.m; sourceTree = "<group>"; };
-		CDE3B2F51983C00E00DCC7BA /* ShapeKitDemo-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "ShapeKitDemo-Info.plist"; sourceTree = "<group>"; };
-		CDE3B2F61983C00E00DCC7BA /* ShapeKitDemo-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShapeKitDemo-Prefix.pch"; sourceTree = "<group>"; };
-		CDE3B2F71983C00E00DCC7BA /* ShapeKitDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeKitDemo_Prefix.pch; sourceTree = "<group>"; };
-		CDE3B2F81983C00E00DCC7BA /* ShapeKitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeKitViewController.h; sourceTree = "<group>"; };
-		CDE3B2F91983C00E00DCC7BA /* ShapeKitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeKitViewController.m; sourceTree = "<group>"; };
-		CDE3B2FA1983C00E00DCC7BA /* ShapeKitViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShapeKitViewController.xib; sourceTree = "<group>"; };
-		CDE3B30E1984249800DCC7BA /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
-		CDE3B3161984272300DCC7BA /* libPods-ShapeKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-ShapeKit.a"; path = "Pods/build/Debug-iphoneos/libPods-ShapeKit.a"; sourceTree = "<group>"; };
+		B732739C1C9DFDAC00AB3FE9 /* ShapeKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ShapeKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B73273A81C9DFDF000AB3FE9 /* ShapeKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeKit.h; sourceTree = "<group>"; };
+		B73273AD1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShapeGeometry+Predicates.h"; sourceTree = "<group>"; };
+		B73273AE1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShapeGeometry+Predicates.m"; sourceTree = "<group>"; };
+		B73273AF1C9DFDF000AB3FE9 /* ShapeGeometry+Topology.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "ShapeGeometry+Topology.h"; sourceTree = "<group>"; };
+		B73273B01C9DFDF000AB3FE9 /* ShapeGeometry+Topology.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "ShapeGeometry+Topology.m"; sourceTree = "<group>"; };
+		B73273B11C9DFDF000AB3FE9 /* ShapeGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeGeometry.h; sourceTree = "<group>"; };
+		B73273B21C9DFDF000AB3FE9 /* ShapeGeometry.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ShapeGeometry.mm; sourceTree = "<group>"; };
+		B73273C71C9DFE0900AB3FE9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B73273CA1C9E023B00AB3FE9 /* geos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = geos.framework; path = Carthage/Build/iOS/geos.framework; sourceTree = "<group>"; };
+		B73273CB1C9E023B00AB3FE9 /* proj4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = proj4.framework; path = Carthage/Build/iOS/proj4.framework; sourceTree = "<group>"; };
+		B73273CE1C9E065A00AB3FE9 /* LocationPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPoint.h; sourceTree = "<group>"; };
+		B73273CF1C9E065A00AB3FE9 /* LocationPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPoint.m; sourceTree = "<group>"; };
+		B73273D21C9E0B1000AB3FE9 /* GEOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOS.h; sourceTree = "<group>"; };
+		B73273D31C9E0B1000AB3FE9 /* GEOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOS.m; sourceTree = "<group>"; };
+		B73273D61C9E0D8C00AB3FE9 /* ShapePoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapePoint.h; sourceTree = "<group>"; };
+		B73273D71C9E0D8C00AB3FE9 /* ShapePoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapePoint.m; sourceTree = "<group>"; };
+		B73273DA1C9E0D9700AB3FE9 /* ShapePolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapePolyline.h; sourceTree = "<group>"; };
+		B73273DB1C9E0D9700AB3FE9 /* ShapePolyline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapePolyline.m; sourceTree = "<group>"; };
+		B73273DE1C9E0EBD00AB3FE9 /* ShapePolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapePolygon.h; sourceTree = "<group>"; };
+		B73273DF1C9E0EBD00AB3FE9 /* ShapePolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapePolygon.m; sourceTree = "<group>"; };
+		B73273E21C9E0FA600AB3FE9 /* ShapeMultiGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapeMultiGeometry.h; sourceTree = "<group>"; };
+		B73273E31C9E0FA600AB3FE9 /* ShapeMultiGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapeMultiGeometry.m; sourceTree = "<group>"; };
+		B73273E61C9E318D00AB3FE9 /* NSData+GEOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+GEOS.h"; sourceTree = "<group>"; };
+		B73273E71C9E318D00AB3FE9 /* NSData+GEOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GEOS.m"; sourceTree = "<group>"; };
+		B73273EA1C9E319800AB3FE9 /* NSString+GEOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GEOS.h"; sourceTree = "<group>"; };
+		B73273EB1C9E319800AB3FE9 /* NSString+GEOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GEOS.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		CDA9A7641667C87A0008D661 /* Frameworks */ = {
+		B73273981C9DFDAC00AB3FE9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDA9A76B1667C87A0008D661 /* Foundation.framework in Frameworks */,
-				71D0AD4830CF417DAEAF69FF /* libPods-ShapeKit.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDE3B2B41983C00400DCC7BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDE3B3181984279D00DCC7BA /* libShapeKit.a in Frameworks */,
-				CDE3B2BA1983C00400DCC7BA /* CoreGraphics.framework in Frameworks */,
-				CDE3B2BC1983C00400DCC7BA /* UIKit.framework in Frameworks */,
-				CDE3B2B81983C00400DCC7BA /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDE3B2CC1983C00400DCC7BA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDE3B2D11983C00400DCC7BA /* XCTest.framework in Frameworks */,
-				CDE3B2D31983C00500DCC7BA /* UIKit.framework in Frameworks */,
-				CDE3B2D21983C00500DCC7BA /* Foundation.framework in Frameworks */,
+				B73273CD1C9E023B00AB3FE9 /* proj4.framework in Frameworks */,
+				B73273CC1C9E023B00AB3FE9 /* geos.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CDA9A75C1667C87A0008D661 = {
+		B73273921C9DFDAC00AB3FE9 = {
 			isa = PBXGroup;
 			children = (
-				CDE3B2E41983C00E00DCC7BA /* ShapeKitDemo */,
-				CDA9A76C1667C87A0008D661 /* ShapeKit */,
-				CDE3B2D61983C00500DCC7BA /* ShapeKitDemoTests */,
-				CDA9A7691667C87A0008D661 /* Frameworks */,
-				CDA9A7681667C87A0008D661 /* Products */,
-				3A947EB114C64337BC591145 /* Pods-ShapeKit.xcconfig */,
-				BDBB71E3599C43EABE38813C /* Pods-ShapeKitDemo.xcconfig */,
+				B73273A71C9DFDF000AB3FE9 /* inc */,
+				B73273A91C9DFDF000AB3FE9 /* src */,
+				B73273C61C9DFE0900AB3FE9 /* resources */,
+				B73273C91C9E022E00AB3FE9 /* framework */,
+				B732739D1C9DFDAC00AB3FE9 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		CDA9A7681667C87A0008D661 /* Products */ = {
+		B732739D1C9DFDAC00AB3FE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDA9A7671667C87A0008D661 /* libShapeKit.a */,
-				CDE3B2B71983C00400DCC7BA /* ShapeKitDemo.app */,
-				CDE3B2CF1983C00400DCC7BA /* ShapeKitDemoTests.xctest */,
+				B732739C1C9DFDAC00AB3FE9 /* ShapeKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CDA9A7691667C87A0008D661 /* Frameworks */ = {
+		B73273A71C9DFDF000AB3FE9 /* inc */ = {
 			isa = PBXGroup;
 			children = (
-				CDE3B3161984272300DCC7BA /* libPods-ShapeKit.a */,
-				CDA9A76A1667C87A0008D661 /* Foundation.framework */,
-				CDE3B2B91983C00400DCC7BA /* CoreGraphics.framework */,
-				CDE3B2BB1983C00400DCC7BA /* UIKit.framework */,
-				CDE3B2D01983C00400DCC7BA /* XCTest.framework */,
-				72C32FF98E8643EB862CBB30 /* libPods-ShapeKit.a */,
-				9127DBD9F13D44A4A2CBF901 /* libPods-ShapeKitDemo.a */,
+				B73273A81C9DFDF000AB3FE9 /* ShapeKit.h */,
 			);
-			name = Frameworks;
+			path = inc;
 			sourceTree = "<group>";
 		};
-		CDA9A76C1667C87A0008D661 /* ShapeKit */ = {
+		B73273A91C9DFDF000AB3FE9 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				CDA9A7921667C9310008D661 /* Classes */,
-				CDA9A76D1667C87A0008D661 /* Supporting Files */,
+				B73273D21C9E0B1000AB3FE9 /* GEOS.h */,
+				B73273D31C9E0B1000AB3FE9 /* GEOS.m */,
+				B73273CE1C9E065A00AB3FE9 /* LocationPoint.h */,
+				B73273CF1C9E065A00AB3FE9 /* LocationPoint.m */,
+				B73273AD1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.h */,
+				B73273AE1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.m */,
+				B73273AF1C9DFDF000AB3FE9 /* ShapeGeometry+Topology.h */,
+				B73273B01C9DFDF000AB3FE9 /* ShapeGeometry+Topology.m */,
+				B73273B11C9DFDF000AB3FE9 /* ShapeGeometry.h */,
+				B73273B21C9DFDF000AB3FE9 /* ShapeGeometry.mm */,
+				B73273D61C9E0D8C00AB3FE9 /* ShapePoint.h */,
+				B73273D71C9E0D8C00AB3FE9 /* ShapePoint.m */,
+				B73273DA1C9E0D9700AB3FE9 /* ShapePolyline.h */,
+				B73273DB1C9E0D9700AB3FE9 /* ShapePolyline.m */,
+				B73273DE1C9E0EBD00AB3FE9 /* ShapePolygon.h */,
+				B73273DF1C9E0EBD00AB3FE9 /* ShapePolygon.m */,
+				B73273E21C9E0FA600AB3FE9 /* ShapeMultiGeometry.h */,
+				B73273E31C9E0FA600AB3FE9 /* ShapeMultiGeometry.m */,
+				B73273E61C9E318D00AB3FE9 /* NSData+GEOS.h */,
+				B73273E71C9E318D00AB3FE9 /* NSData+GEOS.m */,
+				B73273EA1C9E319800AB3FE9 /* NSString+GEOS.h */,
+				B73273EB1C9E319800AB3FE9 /* NSString+GEOS.m */,
 			);
-			path = ShapeKit;
+			path = src;
 			sourceTree = "<group>";
 		};
-		CDA9A76D1667C87A0008D661 /* Supporting Files */ = {
+		B73273C61C9DFE0900AB3FE9 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				CDA9A76E1667C87A0008D661 /* ShapeKit-Prefix.pch */,
+				B73273C71C9DFE0900AB3FE9 /* Info.plist */,
 			);
-			name = "Supporting Files";
+			path = resources;
 			sourceTree = "<group>";
 		};
-		CDA9A7921667C9310008D661 /* Classes */ = {
+		B73273C91C9E022E00AB3FE9 /* framework */ = {
 			isa = PBXGroup;
 			children = (
-				CD90C1651668A36F006E5D8F /* ShapeKit.h */,
-				CD90C1661668A36F006E5D8F /* ShapeKitFactory.h */,
-				CD90C1671668A36F006E5D8F /* ShapeKitFactory.m */,
-				CD90C1681668A36F006E5D8F /* ShapeKitGeometry.h */,
-				CD90C1691668A36F006E5D8F /* ShapeKitGeometry.mm */,
-				CD90C16A1668A36F006E5D8F /* ShapeKitGeometry+Predicates.h */,
-				CD90C16B1668A36F006E5D8F /* ShapeKitGeometry+Predicates.m */,
-				CD90C16C1668A36F006E5D8F /* ShapeKitGeometry+Topology.h */,
-				CD90C16D1668A36F006E5D8F /* ShapeKitGeometry+Topology.m */,
-				CD90C16E1668A36F006E5D8F /* ShapeKitPolyline+Linearref.h */,
-				CD90C16F1668A36F006E5D8F /* ShapeKitPolyline+Linearref.m */,
-				CD90C1831668AFFE006E5D8F /* ShapeKitPrivateInterface.h */,
+				B73273CA1C9E023B00AB3FE9 /* geos.framework */,
+				B73273CB1C9E023B00AB3FE9 /* proj4.framework */,
 			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		CDE3B2D61983C00500DCC7BA /* ShapeKitDemoTests */ = {
-			isa = PBXGroup;
-			children = (
-				CDE3B2DC1983C00500DCC7BA /* ShapeKitDemoTests.m */,
-				CDE3B2D71983C00500DCC7BA /* Supporting Files */,
-			);
-			path = ShapeKitDemoTests;
-			sourceTree = "<group>";
-		};
-		CDE3B2D71983C00500DCC7BA /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				CDE3B2D81983C00500DCC7BA /* ShapeKitDemoTests-Info.plist */,
-				CDE3B2D91983C00500DCC7BA /* InfoPlist.strings */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CDE3B2E41983C00E00DCC7BA /* ShapeKitDemo */ = {
-			isa = PBXGroup;
-			children = (
-				CDE3B30A1983C03100DCC7BA /* Classes */,
-				CDE3B3091983C02600DCC7BA /* Supporting files */,
-				CDE3B2EB1983C00E00DCC7BA /* MainWindow.xib */,
-				CDE3B30B1983C04700DCC7BA /* Data */,
-				CDE3B2F71983C00E00DCC7BA /* ShapeKitDemo_Prefix.pch */,
-				CDE3B2FA1983C00E00DCC7BA /* ShapeKitViewController.xib */,
-			);
-			path = ShapeKitDemo;
-			sourceTree = "<group>";
-		};
-		CDE3B3091983C02600DCC7BA /* Supporting files */ = {
-			isa = PBXGroup;
-			children = (
-				CDE3B2E71983C00E00DCC7BA /* InfoPlist.strings */,
-				CDE3B2EA1983C00E00DCC7BA /* main.m */,
-				CDE3B2F51983C00E00DCC7BA /* ShapeKitDemo-Info.plist */,
-				CDE3B2F61983C00E00DCC7BA /* ShapeKitDemo-Prefix.pch */,
-			);
-			name = "Supporting files";
-			sourceTree = "<group>";
-		};
-		CDE3B30A1983C03100DCC7BA /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				CDE3B30E1984249800DCC7BA /* main.mm */,
-				CDE3B2EC1983C00E00DCC7BA /* NSString+HexToData.h */,
-				CDE3B2ED1983C00E00DCC7BA /* NSString+HexToData.m */,
-				CDE3B2F11983C00E00DCC7BA /* ShapeKit+MapKit.h */,
-				CDE3B2F21983C00E00DCC7BA /* ShapeKit+MapKit.m */,
-				CDE3B2F31983C00E00DCC7BA /* ShapeKitAppDelegate.h */,
-				CDE3B2F41983C00E00DCC7BA /* ShapeKitAppDelegate.m */,
-				CDE3B2F81983C00E00DCC7BA /* ShapeKitViewController.h */,
-				CDE3B2F91983C00E00DCC7BA /* ShapeKitViewController.m */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		CDE3B30B1983C04700DCC7BA /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				CDE3B2EE1983C00E00DCC7BA /* PlanID20-82.plist */,
-				CDE3B2EF1983C00E00DCC7BA /* PlanID20-83.plist */,
-				CDE3B2F01983C00E00DCC7BA /* PlanID20-84.plist */,
-			);
-			name = Data;
+			name = framework;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		B73273991C9DFDAC00AB3FE9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B73273B61C9DFDF000AB3FE9 /* ShapeKit.h in Headers */,
+				B73273BE1C9DFDF000AB3FE9 /* ShapeGeometry.h in Headers */,
+				B73273E41C9E0FA600AB3FE9 /* ShapeMultiGeometry.h in Headers */,
+				B73273BA1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.h in Headers */,
+				B73273BC1C9DFDF000AB3FE9 /* ShapeGeometry+Topology.h in Headers */,
+				B73273D81C9E0D8C00AB3FE9 /* ShapePoint.h in Headers */,
+				B73273DC1C9E0D9700AB3FE9 /* ShapePolyline.h in Headers */,
+				B73273E01C9E0EBD00AB3FE9 /* ShapePolygon.h in Headers */,
+				B73273D01C9E065A00AB3FE9 /* LocationPoint.h in Headers */,
+				B73273D41C9E0B1000AB3FE9 /* GEOS.h in Headers */,
+				B73273E81C9E318D00AB3FE9 /* NSData+GEOS.h in Headers */,
+				B73273EC1C9E319800AB3FE9 /* NSString+GEOS.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
-		CDA9A7661667C87A0008D661 /* ShapeKit */ = {
+		B732739B1C9DFDAC00AB3FE9 /* ShapeKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDA9A7751667C87A0008D661 /* Build configuration list for PBXNativeTarget "ShapeKit" */;
+			buildConfigurationList = B73273A41C9DFDAC00AB3FE9 /* Build configuration list for PBXNativeTarget "ShapeKit" */;
 			buildPhases = (
-				1F439C766F8242BEAD0950C1 /* Check Pods Manifest.lock */,
-				CDA9A7631667C87A0008D661 /* Sources */,
-				CDA9A7641667C87A0008D661 /* Frameworks */,
-				CDA9A7651667C87A0008D661 /* CopyFiles */,
-				D4F747F85283414CB0D24773 /* Copy Pods Resources */,
+				B73273971C9DFDAC00AB3FE9 /* Sources */,
+				B73273981C9DFDAC00AB3FE9 /* Frameworks */,
+				B73273991C9DFDAC00AB3FE9 /* Headers */,
+				B732739A1C9DFDAC00AB3FE9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -335,534 +190,224 @@
 			);
 			name = ShapeKit;
 			productName = ShapeKit;
-			productReference = CDA9A7671667C87A0008D661 /* libShapeKit.a */;
-			productType = "com.apple.product-type.library.static";
-		};
-		CDE3B2B61983C00400DCC7BA /* ShapeKitDemo */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CDE3B2E21983C00500DCC7BA /* Build configuration list for PBXNativeTarget "ShapeKitDemo" */;
-			buildPhases = (
-				ADAFF0BA2CC44AA1BEA3B420 /* Check Pods Manifest.lock */,
-				CDE3B2B31983C00400DCC7BA /* Sources */,
-				CDE3B2B41983C00400DCC7BA /* Frameworks */,
-				CDE3B2B51983C00400DCC7BA /* Resources */,
-				D28C606C832C446CAC72599D /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CDE3B30D198422A600DCC7BA /* PBXTargetDependency */,
-			);
-			name = ShapeKitDemo;
-			productName = ShapeKitDemo;
-			productReference = CDE3B2B71983C00400DCC7BA /* ShapeKitDemo.app */;
-			productType = "com.apple.product-type.application";
-		};
-		CDE3B2CE1983C00400DCC7BA /* ShapeKitDemoTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CDE3B2E31983C00500DCC7BA /* Build configuration list for PBXNativeTarget "ShapeKitDemoTests" */;
-			buildPhases = (
-				CDE3B2CB1983C00400DCC7BA /* Sources */,
-				CDE3B2CC1983C00400DCC7BA /* Frameworks */,
-				CDE3B2CD1983C00400DCC7BA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CDE3B2D51983C00500DCC7BA /* PBXTargetDependency */,
-			);
-			name = ShapeKitDemoTests;
-			productName = ShapeKitDemoTests;
-			productReference = CDE3B2CF1983C00400DCC7BA /* ShapeKitDemoTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
+			productReference = B732739C1C9DFDAC00AB3FE9 /* ShapeKit.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		CDA9A75E1667C87A0008D661 /* Project object */ = {
+		B73273931C9DFDAC00AB3FE9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = ShapeKit;
 				TargetAttributes = {
-					CDE3B2CE1983C00400DCC7BA = {
-						TestTargetID = CDE3B2B61983C00400DCC7BA;
+					B732739B1C9DFDAC00AB3FE9 = {
+						CreatedOnToolsVersion = 7.2.1;
 					};
 				};
 			};
-			buildConfigurationList = CDA9A7611667C87A0008D661 /* Build configuration list for PBXProject "ShapeKit" */;
+			buildConfigurationList = B73273961C9DFDAC00AB3FE9 /* Build configuration list for PBXProject "ShapeKit" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = CDA9A75C1667C87A0008D661;
-			productRefGroup = CDA9A7681667C87A0008D661 /* Products */;
+			mainGroup = B73273921C9DFDAC00AB3FE9;
+			productRefGroup = B732739D1C9DFDAC00AB3FE9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDA9A7661667C87A0008D661 /* ShapeKit */,
-				CD345F2016F7630600B69077 /* ShapeKit documentation */,
-				CDE3B2B61983C00400DCC7BA /* ShapeKitDemo */,
-				CDE3B2CE1983C00400DCC7BA /* ShapeKitDemoTests */,
+				B732739B1C9DFDAC00AB3FE9 /* ShapeKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CDE3B2B51983C00400DCC7BA /* Resources */ = {
+		B732739A1C9DFDAC00AB3FE9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CDE3B3021983C00E00DCC7BA /* PlanID20-83.plist in Resources */,
-				CDE3B3081983C00E00DCC7BA /* ShapeKitViewController.xib in Resources */,
-				CDE3B3011983C00E00DCC7BA /* PlanID20-82.plist in Resources */,
-				CDE3B3061983C00E00DCC7BA /* ShapeKitDemo-Info.plist in Resources */,
-				CDE3B2FF1983C00E00DCC7BA /* MainWindow.xib in Resources */,
-				CDE3B3031983C00E00DCC7BA /* PlanID20-84.plist in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDE3B2CD1983C00400DCC7BA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDE3B2DB1983C00500DCC7BA /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		1F439C766F8242BEAD0950C1 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		ADAFF0BA2CC44AA1BEA3B420 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		CD345F2416F7630A00B69077 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/appledoc \\\n--project-name \"ShapeKit\" \\\n--project-company \"redcluster\" \\\n--company-id \"eu.redcluster\" \\\n--output \"${PROJECT_DIR}/Documentation\" \\\n--create-docset \\\n--install-docset \\\n--create-html \\\n--exit-threshold 2 \\\n--no-repeat-first-par \\\n--index-desc \"${PROJECT_DIR}/README.markdown\" \\\n\"${PROJECT_DIR}/ShapeKit\"";
-		};
-		D28C606C832C446CAC72599D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-ShapeKitDemo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D4F747F85283414CB0D24773 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Pods-ShapeKit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		CDA9A7631667C87A0008D661 /* Sources */ = {
+		B73273971C9DFDAC00AB3FE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CD90C1701668A378006E5D8F /* ShapeKitFactory.m in Sources */,
-				CD90C1711668A378006E5D8F /* ShapeKitGeometry.mm in Sources */,
-				CD90C1721668A378006E5D8F /* ShapeKitGeometry+Predicates.m in Sources */,
-				CD90C1731668A378006E5D8F /* ShapeKitGeometry+Topology.m in Sources */,
-				CD90C1741668A378006E5D8F /* ShapeKitPolyline+Linearref.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDE3B2B31983C00400DCC7BA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDE3B3001983C00E00DCC7BA /* NSString+HexToData.m in Sources */,
-				CDE3B3051983C00E00DCC7BA /* ShapeKitAppDelegate.m in Sources */,
-				CDE3B3071983C00E00DCC7BA /* ShapeKitViewController.m in Sources */,
-				CDE3B3041983C00E00DCC7BA /* ShapeKit+MapKit.m in Sources */,
-				CDE3B30F1984249800DCC7BA /* main.mm in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CDE3B2CB1983C00400DCC7BA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CDE3B2DD1983C00500DCC7BA /* ShapeKitDemoTests.m in Sources */,
+				B73273D91C9E0D8C00AB3FE9 /* ShapePoint.m in Sources */,
+				B73273BF1C9DFDF000AB3FE9 /* ShapeGeometry.mm in Sources */,
+				B73273E11C9E0EBD00AB3FE9 /* ShapePolygon.m in Sources */,
+				B73273ED1C9E319800AB3FE9 /* NSString+GEOS.m in Sources */,
+				B73273E51C9E0FA600AB3FE9 /* ShapeMultiGeometry.m in Sources */,
+				B73273E91C9E318D00AB3FE9 /* NSData+GEOS.m in Sources */,
+				B73273BD1C9DFDF000AB3FE9 /* ShapeGeometry+Topology.m in Sources */,
+				B73273D11C9E065A00AB3FE9 /* LocationPoint.m in Sources */,
+				B73273BB1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.m in Sources */,
+				B73273D51C9E0B1000AB3FE9 /* GEOS.m in Sources */,
+				B73273DD1C9E0D9700AB3FE9 /* ShapePolyline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		CDE3B2D51983C00500DCC7BA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CDE3B2B61983C00400DCC7BA /* ShapeKitDemo */;
-			targetProxy = CDE3B2D41983C00500DCC7BA /* PBXContainerItemProxy */;
-		};
-		CDE3B30D198422A600DCC7BA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CDA9A7661667C87A0008D661 /* ShapeKit */;
-			targetProxy = CDE3B30C198422A600DCC7BA /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		CDE3B2D91983C00500DCC7BA /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDE3B2DA1983C00500DCC7BA /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		CDE3B2E71983C00E00DCC7BA /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CDE3B2E81983C00E00DCC7BA /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		CD345F2116F7630600B69077 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		CD345F2216F7630600B69077 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		CDA9A7731667C87A0008D661 /* Debug */ = {
+		B73273A21C9DFDAC00AB3FE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
 		};
-		CDA9A7741667C87A0008D661 /* Release */ = {
+		B73273A31C9DFDAC00AB3FE9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
-		CDA9A7761667C87A0008D661 /* Debug */ = {
+		B73273A51C9DFDAC00AB3FE9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A947EB114C64337BC591145 /* Pods-ShapeKit.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "libstdc++";
-				DSTROOT = /tmp/ShapeKit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShapeKit/ShapeKit-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = (
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/libs\"",
-					"\"$(SRCROOT)/Libraries/libs/bin\"",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = "$(SRCROOT)/resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShapeKit.ShapeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
 		};
-		CDA9A7771667C87A0008D661 /* Release */ = {
+		B73273A61C9DFDAC00AB3FE9 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3A947EB114C64337BC591145 /* Pods-ShapeKit.xcconfig */;
 			buildSettings = {
-				CLANG_CXX_LIBRARY = "libstdc++";
-				DSTROOT = /tmp/ShapeKit.dst;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShapeKit/ShapeKit-Prefix.pch";
-				LIBRARY_SEARCH_PATHS = (
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"\"$(SRCROOT)/libs\"",
-					"\"$(SRCROOT)/Libraries/libs/bin\"",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				OTHER_LDFLAGS = "-ObjC";
+				INFOPLIST_FILE = "$(SRCROOT)/resources/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ShapeKit.ShapeKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-			};
-			name = Release;
-		};
-		CDE3B2DE1983C00500DCC7BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDBB71E3599C43EABE38813C /* Pods-ShapeKitDemo.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_CXX_LIBRARY = "libstdc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ShapeKitDemo/ShapeKitDemo_Prefix.pch;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ShapeKitDemo/ShapeKitDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		CDE3B2DF1983C00500DCC7BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BDBB71E3599C43EABE38813C /* Pods-ShapeKitDemo.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CLANG_CXX_LIBRARY = "libstdc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = ShapeKitDemo/ShapeKitDemo_Prefix.pch;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ShapeKitDemo/ShapeKitDemo-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
-				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		CDE3B2E01983C00500DCC7BA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ShapeKitDemo.app/ShapeKitDemo";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShapeKitDemo/ShapeKitDemo-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ShapeKitDemoTests/ShapeKitDemoTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		CDE3B2E11983C00500DCC7BA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/ShapeKitDemo.app/ShapeKitDemo";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				ENABLE_NS_ASSERTIONS = NO;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "ShapeKitDemo/ShapeKitDemo-Prefix.pch";
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				INFOPLIST_FILE = "ShapeKitDemoTests/ShapeKitDemoTests-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CD345F2316F7630600B69077 /* Build configuration list for PBXAggregateTarget "ShapeKit documentation" */ = {
+		B73273961C9DFDAC00AB3FE9 /* Build configuration list for PBXProject "ShapeKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CD345F2116F7630600B69077 /* Debug */,
-				CD345F2216F7630600B69077 /* Release */,
+				B73273A21C9DFDAC00AB3FE9 /* Debug */,
+				B73273A31C9DFDAC00AB3FE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDA9A7611667C87A0008D661 /* Build configuration list for PBXProject "ShapeKit" */ = {
+		B73273A41C9DFDAC00AB3FE9 /* Build configuration list for PBXNativeTarget "ShapeKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				CDA9A7731667C87A0008D661 /* Debug */,
-				CDA9A7741667C87A0008D661 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CDA9A7751667C87A0008D661 /* Build configuration list for PBXNativeTarget "ShapeKit" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CDA9A7761667C87A0008D661 /* Debug */,
-				CDA9A7771667C87A0008D661 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CDE3B2E21983C00500DCC7BA /* Build configuration list for PBXNativeTarget "ShapeKitDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CDE3B2DE1983C00500DCC7BA /* Debug */,
-				CDE3B2DF1983C00500DCC7BA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CDE3B2E31983C00500DCC7BA /* Build configuration list for PBXNativeTarget "ShapeKitDemoTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CDE3B2E01983C00500DCC7BA /* Debug */,
-				CDE3B2E11983C00500DCC7BA /* Release */,
+				B73273A51C9DFDAC00AB3FE9 /* Debug */,
+				B73273A61C9DFDAC00AB3FE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = CDA9A75E1667C87A0008D661 /* Project object */;
+	rootObject = B73273931C9DFDAC00AB3FE9 /* Project object */;
 }

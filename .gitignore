@@ -1,6 +1,9 @@
 # Xcode
 #
+Cartfile.resolved
+.DS_Store
 build/
+Carthage
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -16,5 +19,3 @@ DerivedData
 *.hmap
 *.ipa
 *.xcuserstate
-
-Pods/
