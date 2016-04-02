@@ -7,7 +7,7 @@
 
 
 #import "ShapePoint.h"
-#import "GEOS.h"
+#import <geos/GEOSHelper.h>
 
 
 @interface ShapePoint ()
@@ -57,7 +57,8 @@
 {
     if (( self = [super init] ))
     {
-        GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+        GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+        assert(handle);
         
         GEOSCoordSequence *seq = GEOSCoordSeq_create_r(handle, 1,2);
         GEOSCoordSeq_setX_r(handle, seq, 0, coordinate.longitude);
@@ -79,7 +80,7 @@
 
 -(void) _extractCoordinatesFromGEOSGeom
 {
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
 
     GEOSCoordSequence *sequence = GEOSCoordSeq_clone_r(handle, GEOSGeom_getCoordSeq_r(handle, self.geosHandle));
     

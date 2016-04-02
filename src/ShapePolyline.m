@@ -8,7 +8,7 @@
 
 #import "ShapePolyline.h"
 
-#import "GEOS.h"
+#import <geos/GEOSHelper.h>
 
 
 @interface ShapePolyline ()
@@ -57,7 +57,7 @@
 
 -(id) initWithCoordinates:(NSArray<LocationPoint*>*)points
 {
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     
     GEOSCoordSequence *sequence = GEOSCoordSeq_create_r(handle, (unsigned int)points.count, 2);
     
@@ -80,19 +80,19 @@
 
 -(double) distanceFromOriginToProjectionOfPoint:(ShapePoint*)point
 {
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     return GEOSProject_r(handle, self.geosHandle, point.geosHandle);
 }
 
 -(double) normalizedDistanceFromOriginToProjectionOfPoint:(ShapePoint*)point
 {
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     return GEOSProjectNormalized_r(handle, self.geosHandle, point.geosHandle);
 }
 
 -(ShapePoint*) interpolatePointAtDistance:(double)distance
 {
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     void *geom = GEOSInterpolate_r(handle, self.geosHandle, distance);
     ShapePoint *point = [[ShapePoint alloc] initWithGeosGeometry:geom];
     return point;
@@ -100,7 +100,7 @@
 
 -(ShapePoint*) interpolatePointAtNormalizedDistance:(double)fraction
 {
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     void *geom = GEOSInterpolateNormalized_r(handle, self.geosHandle, fraction);
     ShapePoint *point = [[ShapePoint alloc] initWithGeosGeometry:geom];
     return point;
@@ -119,7 +119,7 @@
 {
     _geometries = [NSMutableArray new];
     
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     GEOSCoordSequence *sequence = GEOSCoordSeq_clone_r(handle, GEOSGeom_getCoordSeq_r(handle, self.geosHandle));
     
     unsigned int count = 0;

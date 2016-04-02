@@ -8,7 +8,7 @@
 
 #import "ShapeMultiGeometry.h"
 
-#import "GEOS.h"
+#import <geos/GEOSHelper.h>
 
 
 @interface ShapeMultiGeometry ()
@@ -69,7 +69,7 @@
         
 -(void) _loadSubGeometries
 {
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     
     int numGeometries = GEOSGetNumGeometries_r(handle, self.geosHandle);
 
@@ -89,11 +89,12 @@
 {
     NSMutableString *geomsList = [NSMutableString new];
     
-    int i=0;
+    NSInteger i = 1;
 
     for (ShapeGeometry*geom in self.geometries)
     {
-        [geomsList appendFormat:@"\n     Geometry %i: %@", ++i, [geom description]];
+        [geomsList appendFormat:@"\n     Geometry %i: %@", (int)i, geom.description];
+        i += 1;
     }
     
     return [super.description stringByAppendingFormat: @"%@", geomsList];

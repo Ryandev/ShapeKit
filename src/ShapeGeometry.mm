@@ -9,9 +9,9 @@
 #import "ShapeGeometry.h"
 
 #import <geos/geos_c.h>
+#import <geos/GEOSHelper.h>
 #import <proj4/proj4.h>
 
-#import "GEOS.h"
 #import "ShapePoint.h"
 #import "ShapePolyline.h"
 #import "ShapePolygon.h"
@@ -25,7 +25,7 @@
 {
 @protected
     GEOSGeometry *_geosHandle;
-    NSMutableArray <LocationPoint*>*_coordinates;
+    NSMutableArray <LocationPoint*> *_coordinates;
 }
 
 @property (readwrite, copy) NSString *geomType;
@@ -59,26 +59,11 @@
 @synthesize coordinates = _coordinates;
 
 
--(id) init
-{
-    if (( self = [super init] ))
-    {
-        _coordinates = [NSMutableArray new];
-    }
-    
-    return self;
-}
-
-- (void)dealloc
-{
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
-    GEOSGeom_destroy_r(handle, _geosHandle);
-}
-
 -(id) initWithWKB:(NSData*)wkb
 {
     if (( self = [super init] ))
     {
+        _coordinates = [NSMutableArray new];
         _geosHandle = wkb.geosGeom;
         [self _loadGeomType];
     }
@@ -90,6 +75,7 @@
 {
     if (( self = [super init] ))
     {
+        _coordinates = [NSMutableArray new];
         _geosHandle = wkt.geosGeom;
         [self _loadGeomType];
     }
@@ -101,10 +87,17 @@
 {
     if (( self = [super init] ))
     {
+        _coordinates = [NSMutableArray new];
         _geosHandle = (GEOSGeometry*)geom;
         [self _loadGeomType];
     }
     return self;    
+}
+
+-(void) dealloc
+{
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    GEOSGeom_destroy_r(handle, _geosHandle);
 }
 
 +(instancetype) geometryWithWKT:(NSString*)wkt
@@ -135,9 +128,8 @@
     return instance;
 }
 
-+(instancetype) geometryWithGeosGeometry:(void*)geom
++(instancetype) geometryWithGeosGeometry:(GEOSGeometry*)geosGeom
 {
-    GEOSGeom geosGeom = (GEOSGeom)geom;
     int type = [self.class _geomTypeForGEOSGeom:geosGeom];
     Class classLoad = [self.class _classForGeometry:type];
     
@@ -154,9 +146,10 @@
 
 #pragma mark - private
 
+
 -(void) _loadGeomType
 {
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     char *typeString = GEOSGeomType_r(handle, self.geosGeom);
     _geomType = [[NSString alloc] initWithUTF8String:typeString];
     free(typeString);
@@ -200,19 +193,21 @@
 
 +(int) _geomTypeForGEOSGeom:(GEOSGeom)geosGeom
 {
-    int geomTypeID = GEOSGeomTypeId_r([GEOS sharedInstance].handle, geosGeom);
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
+    
+    int geomTypeID = GEOSGeomTypeId_r([GEOSHelper sharedInstance].handle, geosGeom);
     return geomTypeID;
 }
 
-- (NSString *)description
+-(NSString*) description
 {
-    NSMutableString *pointsList = [NSMutableString new];
-
-    for (int i=0; i<self.coordinates.count; i++)
+    __block NSMutableString *pointsList = [NSMutableString new];
+    
+    [self.coordinates enumerateObjectsUsingBlock:^(LocationPoint *point, NSUInteger idx, BOOL *stop)
     {
-        LocationPoint *point = self.coordinates[i];
         [pointsList appendFormat:@"[%.4f, %.4f] ", point.latitude, point.longitude];
-    }
+    }];
     
     return [[super description] stringByAppendingFormat: @"%@", pointsList];
 }

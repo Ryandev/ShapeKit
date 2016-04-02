@@ -18,8 +18,6 @@
 		B73273CD1C9E023B00AB3FE9 /* proj4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B73273CB1C9E023B00AB3FE9 /* proj4.framework */; };
 		B73273D01C9E065A00AB3FE9 /* LocationPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273CE1C9E065A00AB3FE9 /* LocationPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B73273D11C9E065A00AB3FE9 /* LocationPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273CF1C9E065A00AB3FE9 /* LocationPoint.m */; };
-		B73273D41C9E0B1000AB3FE9 /* GEOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273D21C9E0B1000AB3FE9 /* GEOS.h */; };
-		B73273D51C9E0B1000AB3FE9 /* GEOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273D31C9E0B1000AB3FE9 /* GEOS.m */; };
 		B73273D81C9E0D8C00AB3FE9 /* ShapePoint.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273D61C9E0D8C00AB3FE9 /* ShapePoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B73273D91C9E0D8C00AB3FE9 /* ShapePoint.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273D71C9E0D8C00AB3FE9 /* ShapePoint.m */; };
 		B73273DC1C9E0D9700AB3FE9 /* ShapePolyline.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273DA1C9E0D9700AB3FE9 /* ShapePolyline.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,8 +46,6 @@
 		B73273CB1C9E023B00AB3FE9 /* proj4.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = proj4.framework; path = Carthage/Build/iOS/proj4.framework; sourceTree = "<group>"; };
 		B73273CE1C9E065A00AB3FE9 /* LocationPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationPoint.h; sourceTree = "<group>"; };
 		B73273CF1C9E065A00AB3FE9 /* LocationPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationPoint.m; sourceTree = "<group>"; };
-		B73273D21C9E0B1000AB3FE9 /* GEOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GEOS.h; sourceTree = "<group>"; };
-		B73273D31C9E0B1000AB3FE9 /* GEOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GEOS.m; sourceTree = "<group>"; };
 		B73273D61C9E0D8C00AB3FE9 /* ShapePoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapePoint.h; sourceTree = "<group>"; };
 		B73273D71C9E0D8C00AB3FE9 /* ShapePoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShapePoint.m; sourceTree = "<group>"; };
 		B73273DA1C9E0D9700AB3FE9 /* ShapePolyline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShapePolyline.h; sourceTree = "<group>"; };
@@ -107,8 +103,6 @@
 		B73273A91C9DFDF000AB3FE9 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				B73273D21C9E0B1000AB3FE9 /* GEOS.h */,
-				B73273D31C9E0B1000AB3FE9 /* GEOS.m */,
 				B73273CE1C9E065A00AB3FE9 /* LocationPoint.h */,
 				B73273CF1C9E065A00AB3FE9 /* LocationPoint.m */,
 				B73273AD1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.h */,
@@ -166,7 +160,6 @@
 				B73273DC1C9E0D9700AB3FE9 /* ShapePolyline.h in Headers */,
 				B73273E01C9E0EBD00AB3FE9 /* ShapePolygon.h in Headers */,
 				B73273D01C9E065A00AB3FE9 /* LocationPoint.h in Headers */,
-				B73273D41C9E0B1000AB3FE9 /* GEOS.h in Headers */,
 				B73273E81C9E318D00AB3FE9 /* NSData+GEOS.h in Headers */,
 				B73273EC1C9E319800AB3FE9 /* NSString+GEOS.h in Headers */,
 			);
@@ -248,7 +241,6 @@
 				B73273BD1C9DFDF000AB3FE9 /* ShapeGeometry+Topology.m in Sources */,
 				B73273D11C9E065A00AB3FE9 /* LocationPoint.m in Sources */,
 				B73273BB1C9DFDF000AB3FE9 /* ShapeGeometry+Predicates.m in Sources */,
-				B73273D51C9E0B1000AB3FE9 /* GEOS.m in Sources */,
 				B73273DD1C9E0D9700AB3FE9 /* ShapePolyline.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

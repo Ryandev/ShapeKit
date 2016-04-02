@@ -7,7 +7,7 @@
 
 
 #import "ShapePolygon.h"
-#import "GEOS.h"
+#import <geos/GEOSHelper.h>
 
 
 @interface ShapePolygon ()
@@ -63,7 +63,7 @@
 
 -(id) initWithCoordinates:(NSArray<LocationPoint*>*)coordinates
 {
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     GEOSCoordSequence *sequence = GEOSCoordSeq_create_r(handle, (unsigned int)coordinates.count, 2);
     
     for (int i = 0; i <coordinates.count; i++)
@@ -88,7 +88,7 @@
     _exteriors = [NSMutableArray new];
     
     GEOSCoordSequence *sequence = nil;
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     GEOSGeometry *geosGeom = self.geosHandle;
     
     /* Loop interior rings to convert to ShapeKitPolygons */
@@ -128,7 +128,7 @@
     _exteriors = [NSMutableArray new];
     
     GEOSCoordSequence *sequence = nil;
-    GEOSContextHandle_t handle = [GEOS sharedInstance].handle;
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     
     const GEOSGeometry *exterior = GEOSGetExteriorRing_r(handle, self.geosHandle);
     sequence = GEOSCoordSeq_clone_r(handle, GEOSGeom_getCoordSeq_r(handle, exterior));

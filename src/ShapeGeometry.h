@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreLocation/CoreLocation.h>
+#import <geos/geos_c.h>
 
 #import "LocationPoint.h"
 
@@ -31,6 +32,6 @@
 
 +(instancetype) geometryWithWKT:(NSString*)wkt;
 +(instancetype) geometryWithWKB:(NSData*)wkb;
-+(instancetype) geometryWithGeosGeometry:(void*)geom;
++(instancetype) geometryWithGeosGeometry:(GEOSGeometry*)geom;
 
 @end
