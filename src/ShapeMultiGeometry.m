@@ -37,6 +37,7 @@
 {
     if (( [super initWithWKT:wkt] ))
     {
+        _geometries = [NSMutableArray new];
         [self _loadSubGeometries];
     }
     
@@ -47,6 +48,7 @@
 {
     if (( self = [super initWithWKB:wkb] ))
     {
+        _geometries = [NSMutableArray new];
         [self _loadSubGeometries];
     }
     
@@ -57,7 +59,19 @@
 {
     if (( [super initWithGeosGeometry:geom] ))
     {
+        _geometries = [NSMutableArray new];
         [self _loadSubGeometries];
+    }
+    
+    return self;
+}
+
+-(id) initWithShapeGeometries:(NSArray<ShapeGeometry*>*)geometry
+{
+    if (( self = [super init] ))
+    {
+        _geometries = [NSMutableArray new];
+        [_geometries addObjectsFromArray:geometry];
     }
     
     return self;

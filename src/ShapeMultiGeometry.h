@@ -13,4 +13,6 @@
 
 @property (nonatomic, readonly) NSArray <ShapeGeometry*> *geometries;
 
+-(id) initWithShapeGeometries:(NSArray<ShapeGeometry*>*)geometry;
+
 @end
