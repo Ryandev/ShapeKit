@@ -84,6 +84,7 @@
 -(void) _loadSubGeometries
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
     
     int numGeometries = GEOSGetNumGeometries_r(handle, self.geosHandle);
 

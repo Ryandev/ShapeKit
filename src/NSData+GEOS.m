@@ -15,6 +15,8 @@
 
 +(NSData*) dataWithGEOSGeom:(GEOSGeom)geosGeom
 {
+    assert(geosGeom);
+
     /* initialize geos geom if not already */
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
@@ -36,6 +38,7 @@
     assert(handle);
     
     GEOSWKBReader *WKBReader = GEOSWKBReader_create_r(handle);
+    assert(WKBReader);
     
     GEOSGeometry *geosGeom = GEOSWKBReader_read_r(handle, WKBReader, (unsigned char*)self.bytes, (size_t)self.length);
     assert(geosGeom);
@@ -51,6 +54,8 @@
     assert(handle);
     
     GEOSWKBReader *WKBReader = GEOSWKBReader_create_r(handle);
+    assert(WKBReader);
+    
     GEOSGeometry *geosGeom = GEOSWKBReader_read_r(handle, WKBReader, self.bytes, self.length);
     assert(geosGeom);
     

@@ -64,7 +64,10 @@
     if (( self = [super init] ))
     {
         _coordinates = [NSMutableArray new];
+
         _geosHandle = wkb.geosGeom;
+        assert(_geosHandle);
+
         [self _loadGeomType];
     }
     
@@ -76,7 +79,10 @@
     if (( self = [super init] ))
     {
         _coordinates = [NSMutableArray new];
+
         _geosHandle = wkt.geosGeom;
+        assert(_geosHandle);
+        
         [self _loadGeomType];
     }
     
@@ -88,7 +94,10 @@
     if (( self = [super init] ))
     {
         _coordinates = [NSMutableArray new];
+
         _geosHandle = (GEOSGeometry*)geom;
+        assert(_geosHandle);
+
         [self _loadGeomType];
     }
     return self;    
@@ -150,8 +159,12 @@
 -(void) _loadGeomType
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
+
     char *typeString = GEOSGeomType_r(handle, self.geosGeom);
+    
     _geomType = [[NSString alloc] initWithUTF8String:typeString];
+
     free(typeString);
 }
 

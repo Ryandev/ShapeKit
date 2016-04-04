@@ -17,73 +17,89 @@
 -(bool) isDisjointFromGeometry:(ShapeGeometry*)compareGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
     
     bool disjoint = GEOSDisjoint_r(handle, self.geosHandle, compareGeometry.geosHandle);
+
     return disjoint;
 }
 
--(bool)touchesGeometry:(ShapeGeometry*)compareGeometry
+-(bool) touchesGeometry:(ShapeGeometry*)compareGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
-
+    assert(handle);
+    
     bool touches = GEOSTouches_r(handle, self.geosHandle, compareGeometry.geosHandle);
+
     return touches;
 }
 
--(bool)intersectsGeometry:(ShapeGeometry*)compareGeometry
+-(bool) intersectsGeometry:(ShapeGeometry*)compareGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
 
     bool intersects = GEOSIntersects_r(handle, self.geosHandle, compareGeometry.geosHandle);
+
     return intersects;
 }
 
--(bool)crossesGeometry:(ShapeGeometry*)compareGeometry
+-(bool) crossesGeometry:(ShapeGeometry*)compareGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
-
+    assert(handle);
+    
     bool crosses = GEOSCrosses_r(handle, self.geosHandle, compareGeometry.geosHandle);
+
     return crosses;
 }
 
--(bool)isWithinGeometry:(ShapeGeometry*)compareGeometry
+-(bool) isWithinGeometry:(ShapeGeometry*)compareGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
-
+    assert(handle);
+    
     bool within = GEOSWithin_r(handle, self.geosHandle, compareGeometry.geosHandle);
+
     return within;
 }
 
--(bool)containsGeometry:(ShapeGeometry*)compareGeometry
+-(bool) containsGeometry:(ShapeGeometry*)compareGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
-
+    assert(handle);
+    
     bool contains = GEOSContains_r(handle, self.geosHandle, compareGeometry.geosHandle);
+
     return contains;
 }
 
--(bool)overlapsGeometry:(ShapeGeometry*)compareGeometry
+-(bool) overlapsGeometry:(ShapeGeometry*)compareGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
 
     bool overlaps = GEOSOverlaps_r(handle, self.geosHandle, compareGeometry.geosHandle);
+
     return overlaps;
 }
 
--(bool)isEqualToGeometry:(ShapeGeometry*)compareGeometry
+-(bool) isEqualToGeometry:(ShapeGeometry*)compareGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
 
     bool equals = GEOSEquals_r(handle, self.geosHandle, compareGeometry.geosHandle);
+
     return equals;
 }
 
 
--(bool)isRelatedToGeometry:(ShapeGeometry*)compareGeometry withRelatePattern:(NSString *)pattern
+-(bool) isRelatedToGeometry:(ShapeGeometry*)compareGeometry withRelatePattern:(NSString *)pattern
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
-
+    assert(handle);
+    
     bool isRelated = GEOSRelatePattern_r(handle, self.geosHandle, compareGeometry.geosHandle, pattern.UTF8String);
+
     return isRelated;
 }
 

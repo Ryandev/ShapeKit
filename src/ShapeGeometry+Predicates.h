@@ -61,4 +61,5 @@
  */
 -(bool) isRelatedToGeometry:(ShapeGeometry*)compareGeometry withRelatePattern:(NSString*)pattern;
 
+
 @end

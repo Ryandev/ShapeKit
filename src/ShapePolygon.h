@@ -14,6 +14,6 @@
 
 @property (readonly) NSArray *interiors;
 
-- (id)initWithCoordinates:(NSArray<LocationPoint*>*)coordinates;
+-(id) initWithCoordinates:(NSArray<LocationPoint*>*)coordinates;
 
 @end

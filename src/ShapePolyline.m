@@ -58,17 +58,21 @@
 -(id) initWithCoordinates:(NSArray<LocationPoint*>*)points
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
     
     GEOSCoordSequence *sequence = GEOSCoordSeq_create_r(handle, (unsigned int)points.count, 2);
+    assert(sequence);
     
     for (int i=0; i<points.count; i++)
     {
         LocationPoint *point = points[i];
+
         GEOSCoordSeq_setX_r(handle, sequence, i, point.longitude);
         GEOSCoordSeq_setY_r(handle, sequence, i, point.latitude);
     }
 
     void *geosGeom = GEOSGeom_createLineString_r(handle, sequence);
+    assert(geosGeom);
     
     self = [self initWithGeosGeometry:geosGeom];
     
@@ -81,34 +85,53 @@
 -(double) distanceFromOriginToProjectionOfPoint:(ShapePoint*)point
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
-    return GEOSProject_r(handle, self.geosHandle, point.geosHandle);
+    assert(handle);
+    
+    double distance = GEOSProject_r(handle, self.geosHandle, point.geosHandle);
+    
+    return distance;
 }
 
 -(double) normalizedDistanceFromOriginToProjectionOfPoint:(ShapePoint*)point
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
-    return GEOSProjectNormalized_r(handle, self.geosHandle, point.geosHandle);
+    assert(handle);
+    
+    double distance = GEOSProjectNormalized_r(handle, self.geosHandle, point.geosHandle);
+    
+    return distance;
 }
 
 -(ShapePoint*) interpolatePointAtDistance:(double)distance
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
+    
     void *geom = GEOSInterpolate_r(handle, self.geosHandle, distance);
+    assert(geom);
+
     ShapePoint *point = [[ShapePoint alloc] initWithGeosGeometry:geom];
+
     return point;
 }
 
 -(ShapePoint*) interpolatePointAtNormalizedDistance:(double)fraction
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
+    
     void *geom = GEOSInterpolateNormalized_r(handle, self.geosHandle, fraction);
+    assert(geom);
+
     ShapePoint *point = [[ShapePoint alloc] initWithGeosGeometry:geom];
+
     return point;
 }
 
 -(ShapePoint*) middlePoint
 {
-    return [self interpolatePointAtNormalizedDistance:0.5];
+    ShapePoint *midPoint = [self interpolatePointAtNormalizedDistance:0.5f];
+    return midPoint;
 }
 
 
@@ -120,7 +143,10 @@
     _geometries = [NSMutableArray new];
     
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
+    
     GEOSCoordSequence *sequence = GEOSCoordSeq_clone_r(handle, GEOSGeom_getCoordSeq_r(handle, self.geosHandle));
+    assert(sequence);
     
     unsigned int count = 0;
     
@@ -133,8 +159,10 @@
 
         GEOSCoordSeq_getX_r(handle, sequence, i, &x);
         GEOSCoordSeq_getY_r(handle, sequence, i, &y);
-        
-        [_geometries addObject:[LocationPoint pointWithCoordinate:CLLocationCoordinate2DMake(y, x)]];
+
+        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(y, x);
+
+        [_geometries addObject:[LocationPoint pointWithCoordinate:coord]];
     }
     
     GEOSCoordSeq_destroy_r(handle, sequence);
