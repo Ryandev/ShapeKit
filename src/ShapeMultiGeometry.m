@@ -10,6 +10,8 @@
 
 #import <geos/GEOSHelper.h>
 
+#import "NSArray+GEOSGeometryCollection.h"
+
 
 @interface ShapeMultiGeometry ()
 {
@@ -55,7 +57,7 @@
     return self;
 }
 
--(id) initWithGeosGeometry:(void*)geom
+-(id) initWithGeosGeometry:(GEOSGeometry*)geom
 {
     if (( [super initWithGeosGeometry:geom] ))
     {
@@ -68,13 +70,20 @@
 
 -(id) initWithShapeGeometries:(NSArray<ShapeGeometry*>*)geometry
 {
-    if (( self = [super init] ))
-    {
-        _geometries = [NSMutableArray new];
-        [_geometries addObjectsFromArray:geometry];
-    }
+    assert([geometry isKindOfClass:[NSArray class]]);
+
+    GEOSGeometry *geom = geometry.geometryCollection;
+    assert(geom);
+
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
     
-    return self;
+    GEOSGeometry *geom_clone = GEOSGeom_clone_r(handle, geom);
+    
+    id instance = [self initWithGeosGeometry:geom_clone];
+    assert(instance);
+
+    return instance;
 }
 
 
@@ -86,16 +95,20 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    int numGeometries = GEOSGetNumGeometries_r(handle, self.geosHandle);
+    assert(self.geosGeometry);
+    int count = GEOSGetNumGeometries_r(handle, self.geosGeometry);
 
-    for (int i=0; i<numGeometries; i++)
+    for (int i=0; i<count; i++)
     {
-        const GEOSGeometry *curGeom = GEOSGetGeometryN_r(handle, self.geosHandle, i);
+        const GEOSGeometry *curGeom = GEOSGetGeometryN_r(handle, self.geosGeometry, i);
+        assert(curGeom);
         
         //TODO: memory leak?
         GEOSGeometry *geomCopy = GEOSGeom_clone_r(handle, curGeom);
+        assert(geomCopy);
         
         ShapeGeometry *geomObj = [ShapeGeometry geometryWithGeosGeometry:geomCopy];
+
         [_geometries addObject:geomObj];
     }
 }
@@ -104,13 +117,10 @@
 {
     NSMutableString *geomsList = [NSMutableString new];
     
-    NSInteger i = 1;
-
-    for (ShapeGeometry*geom in self.geometries)
+    [self.geometries enumerateObjectsUsingBlock:^(ShapeGeometry *geom, NSUInteger idx, BOOL *stop)
     {
-        [geomsList appendFormat:@"\n     Geometry %i: %@", (int)i, geom.description];
-        i += 1;
-    }
+        [geomsList appendFormat:@"\n     Geometry %i: %@", (int)idx, geom.description];
+    }];
     
     return [super.description stringByAppendingFormat: @"%@", geomsList];
 }

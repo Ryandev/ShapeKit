@@ -14,7 +14,7 @@
 
 +(NSString*) stringWithGEOSGeom:(GEOSGeom)geosGeom;
 
--(GEOSGeom) geosGeom;
+-(GEOSGeom) geosGeometry;
 
 -(int) geomTypeForWKT;
 

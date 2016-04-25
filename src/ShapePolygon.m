@@ -39,7 +39,7 @@
     return self;
 }
 
-- (id)initWithWKT:(NSString *)wkt
+- (id)initWithWKT:(NSString*)wkt
 {
     if (( self = [super initWithWKT:wkt] ))
     {
@@ -50,7 +50,7 @@
     return self;
 }
 
--(id) initWithGeosGeometry:(void*)geom
+-(id) initWithGeosGeometry:(GEOSGeometry*)geom
 {
     if (( self = [super initWithGeosGeometry:geom] ))
     {
@@ -94,7 +94,8 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geosGeom = self.geosHandle;
+    assert(self.geosGeometry);
+    GEOSGeometry *geosGeom = self.geosGeometry;
     
     /* Loop interior rings to convert to ShapeKitPolygons */
     int numInteriorRings = GEOSGetNumInteriorRings_r(handle, geosGeom);
@@ -108,15 +109,26 @@
         GEOSCoordSeq_getSize_r(handle, sequence, &numCoordsInt);
         NSMutableArray *coords = [NSMutableArray new];
         
-        for (int coord = 0; coord < numCoordsInt; coord++)
+        for (int i=0; i<numCoordsInt; i++)
         {
             double x = 0.0;
             double y = 0.0;
 
-            GEOSCoordSeq_getX_r(handle, sequence, coord, &x);
-            GEOSCoordSeq_getY_r(handle, sequence, coord, &y);
-            
-            coords[coord] = [LocationPoint pointWithCoordinate:CLLocationCoordinate2DMake(y, x)];
+            bool didGetX = GEOSCoordSeq_getX_r(handle, sequence, i, &x);
+            bool didGetY = GEOSCoordSeq_getY_r(handle, sequence, i, &y);
+
+
+            if ( didGetX && didGetY )
+            {
+                CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(y, x);
+                
+                coords[i] = [LocationPoint pointWithCoordinate:coord];
+            }
+            else
+            {
+                coords[i] = [NSNull null];
+                NSLog(@"ShapeKit error: failed to load coordinate (%@)",self.description);
+            }
         }
         
         ShapePolygon *curInterior = [[ShapePolygon alloc] initWithCoordinates:coords];
@@ -135,7 +147,9 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    const GEOSGeometry *exterior = GEOSGetExteriorRing_r(handle, self.geosHandle);
+    assert(self.geosGeometry);
+    const GEOSGeometry *exterior = GEOSGetExteriorRing_r(handle, self.geosGeometry);
+
     GEOSCoordSequence *sequence = GEOSCoordSeq_clone_r(handle, GEOSGeom_getCoordSeq_r(handle, exterior));
 
     unsigned int count = 0;

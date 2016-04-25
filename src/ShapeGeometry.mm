@@ -21,41 +21,26 @@
 #import "NSString+GEOS.h"
 
 
-@interface ShapeGeometry ()
-{
-@protected
-    GEOSGeometry *_geosHandle;
-    NSMutableArray <LocationPoint*> *_coordinates;
-}
-
-@property (readwrite, copy) NSString *geomType;
-@property (readwrite, copy) NSString *projDefinition;
-
-@property (readwrite) GEOSGeometry *geosGeom;
-@property (readwrite) CLLocationCoordinate2D *coords;
-@property (readwrite) id geometry;
-
-@end
-
-
 @implementation ShapeGeometry
 
 @dynamic wkt;
 
 -(NSString*) wkt
 {
-    return [NSString stringWithGEOSGeom:_geosHandle];
+    assert(_geosGeometry);
+    return [NSString stringWithGEOSGeom:_geosGeometry];
 }
 
 @dynamic wkb;
 
 -(NSData*) wkb
 {
-    return [NSData dataWithGEOSGeom:_geosHandle];
+    assert(_geosGeometry);
+    return [NSData dataWithGEOSGeom:_geosGeometry];
 }
 
 @synthesize geomType = _geomType;
-@synthesize geosHandle = _geosHandle;
+@synthesize geosGeometry = _geosGeometry;
 @synthesize coordinates = _coordinates;
 
 
@@ -65,8 +50,8 @@
     {
         _coordinates = [NSMutableArray new];
 
-        _geosHandle = wkb.geosGeom;
-        assert(_geosHandle);
+        _geosGeometry = wkb.geosGeometry;
+        assert(_geosGeometry);
 
         [self _loadGeomType];
     }
@@ -80,8 +65,8 @@
     {
         _coordinates = [NSMutableArray new];
 
-        _geosHandle = wkt.geosGeom;
-        assert(_geosHandle);
+        _geosGeometry = wkt.geosGeometry;
+        assert(_geosGeometry);
         
         [self _loadGeomType];
     }
@@ -89,24 +74,34 @@
     return self;
 }
 
--(id) initWithGeosGeometry:(void*)geom
+-(id) initWithGeosGeometry:(GEOSGeometry*)geom
 {
     if (( self = [super init] ))
     {
         _coordinates = [NSMutableArray new];
 
-        _geosHandle = (GEOSGeometry*)geom;
-        assert(_geosHandle);
+        GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+        assert(handle);
+
+        _geosGeometry = GEOSGeom_clone_r(handle, geom);
+        assert(_geosGeometry);
 
         [self _loadGeomType];
     }
+
     return self;    
 }
 
 -(void) dealloc
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
-    GEOSGeom_destroy_r(handle, _geosHandle);
+    assert(handle);
+
+    if ( _geosGeometry )
+    {
+        GEOSGeom_destroy_r(handle, _geosGeometry);
+        _geosGeometry = nil;
+    }
 }
 
 +(instancetype) geometryWithWKT:(NSString*)wkt
@@ -117,7 +112,7 @@
     
     if ( classLoad )
     {
-        instance = [[classLoad alloc] initWithGeosGeometry:wkt.geosGeom];
+        instance = [[classLoad alloc] initWithGeosGeometry:wkt.geosGeometry];
     }
     
     return instance;
@@ -131,7 +126,7 @@
     
     if ( classLoad )
     {
-        instance = [[classLoad alloc] initWithGeosGeometry:wkb.geosGeom];
+        instance = [[classLoad alloc] initWithGeosGeometry:wkb.geosGeometry];
     }
     
     return instance;
@@ -161,7 +156,8 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
 
-    char *typeString = GEOSGeomType_r(handle, self.geosGeom);
+    assert(self.geosGeometry);
+    char *typeString = GEOSGeomType_r(handle, self.geosGeometry);
     
     _geomType = [[NSString alloc] initWithUTF8String:typeString];
 

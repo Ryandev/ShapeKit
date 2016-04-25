@@ -26,10 +26,12 @@
 		B73273E11C9E0EBD00AB3FE9 /* ShapePolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273DF1C9E0EBD00AB3FE9 /* ShapePolygon.m */; };
 		B73273E41C9E0FA600AB3FE9 /* ShapeMultiGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273E21C9E0FA600AB3FE9 /* ShapeMultiGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B73273E51C9E0FA600AB3FE9 /* ShapeMultiGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273E31C9E0FA600AB3FE9 /* ShapeMultiGeometry.m */; };
-		B73273E81C9E318D00AB3FE9 /* NSData+GEOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273E61C9E318D00AB3FE9 /* NSData+GEOS.h */; };
+		B73273E81C9E318D00AB3FE9 /* NSData+GEOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273E61C9E318D00AB3FE9 /* NSData+GEOS.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B73273E91C9E318D00AB3FE9 /* NSData+GEOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273E71C9E318D00AB3FE9 /* NSData+GEOS.m */; };
-		B73273EC1C9E319800AB3FE9 /* NSString+GEOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273EA1C9E319800AB3FE9 /* NSString+GEOS.h */; };
+		B73273EC1C9E319800AB3FE9 /* NSString+GEOS.h in Headers */ = {isa = PBXBuildFile; fileRef = B73273EA1C9E319800AB3FE9 /* NSString+GEOS.h */; settings = {ATTRIBUTES = (Private, ); }; };
 		B73273ED1C9E319800AB3FE9 /* NSString+GEOS.m in Sources */ = {isa = PBXBuildFile; fileRef = B73273EB1C9E319800AB3FE9 /* NSString+GEOS.m */; };
+		B74FD7C81CB59B1F00B1BD37 /* NSArray+GEOSGeometryCollection.h in Headers */ = {isa = PBXBuildFile; fileRef = B74FD7C61CB59B1F00B1BD37 /* NSArray+GEOSGeometryCollection.h */; settings = {ATTRIBUTES = (Private, ); }; };
+		B7677BC51CBD906D0082BDB6 /* NSArray+GEOSGeometryCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = B74FD7C71CB59B1F00B1BD37 /* NSArray+GEOSGeometryCollection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		B73273E71C9E318D00AB3FE9 /* NSData+GEOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+GEOS.m"; sourceTree = "<group>"; };
 		B73273EA1C9E319800AB3FE9 /* NSString+GEOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+GEOS.h"; sourceTree = "<group>"; };
 		B73273EB1C9E319800AB3FE9 /* NSString+GEOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+GEOS.m"; sourceTree = "<group>"; };
+		B74FD7C61CB59B1F00B1BD37 /* NSArray+GEOSGeometryCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+GEOSGeometryCollection.h"; sourceTree = "<group>"; };
+		B74FD7C71CB59B1F00B1BD37 /* NSArray+GEOSGeometryCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+GEOSGeometryCollection.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +127,8 @@
 				B73273E71C9E318D00AB3FE9 /* NSData+GEOS.m */,
 				B73273EA1C9E319800AB3FE9 /* NSString+GEOS.h */,
 				B73273EB1C9E319800AB3FE9 /* NSString+GEOS.m */,
+				B74FD7C61CB59B1F00B1BD37 /* NSArray+GEOSGeometryCollection.h */,
+				B74FD7C71CB59B1F00B1BD37 /* NSArray+GEOSGeometryCollection.m */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -159,9 +165,10 @@
 				B73273D81C9E0D8C00AB3FE9 /* ShapePoint.h in Headers */,
 				B73273DC1C9E0D9700AB3FE9 /* ShapePolyline.h in Headers */,
 				B73273E01C9E0EBD00AB3FE9 /* ShapePolygon.h in Headers */,
-				B73273D01C9E065A00AB3FE9 /* LocationPoint.h in Headers */,
+				B74FD7C81CB59B1F00B1BD37 /* NSArray+GEOSGeometryCollection.h in Headers */,
 				B73273E81C9E318D00AB3FE9 /* NSData+GEOS.h in Headers */,
 				B73273EC1C9E319800AB3FE9 /* NSString+GEOS.h in Headers */,
+				B73273D01C9E065A00AB3FE9 /* LocationPoint.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,7 +182,6 @@
 				B73273971C9DFDAC00AB3FE9 /* Sources */,
 				B73273981C9DFDAC00AB3FE9 /* Frameworks */,
 				B73273991C9DFDAC00AB3FE9 /* Headers */,
-				B732739A1C9DFDAC00AB3FE9 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -217,21 +223,12 @@
 		};
 /* End PBXProject section */
 
-/* Begin PBXResourcesBuildPhase section */
-		B732739A1C9DFDAC00AB3FE9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		B73273971C9DFDAC00AB3FE9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B7677BC51CBD906D0082BDB6 /* NSArray+GEOSGeometryCollection.m in Sources */,
 				B73273D91C9E0D8C00AB3FE9 /* ShapePoint.m in Sources */,
 				B73273BF1C9DFDF000AB3FE9 /* ShapeGeometry.mm in Sources */,
 				B73273E11C9E0EBD00AB3FE9 /* ShapePolygon.m in Sources */,

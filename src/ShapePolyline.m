@@ -45,7 +45,7 @@
     return self;
 }
 
--(id) initWithGeosGeometry:(void*)geom
+-(id) initWithGeosGeometry:(GEOSGeometry*)geom
 {
     if (( [super initWithGeosGeometry:geom] ))
     {
@@ -87,7 +87,8 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    double distance = GEOSProject_r(handle, self.geosHandle, point.geosHandle);
+    assert(self.geosGeometry);
+    double distance = GEOSProject_r(handle, self.geosGeometry, point.geosGeometry);
     
     return distance;
 }
@@ -97,7 +98,8 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    double distance = GEOSProjectNormalized_r(handle, self.geosHandle, point.geosHandle);
+    assert(self.geosGeometry);
+    double distance = GEOSProjectNormalized_r(handle, self.geosGeometry, point.geosGeometry);
     
     return distance;
 }
@@ -107,7 +109,8 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    void *geom = GEOSInterpolate_r(handle, self.geosHandle, distance);
+    assert(self.geosGeometry);
+    void *geom = GEOSInterpolate_r(handle, self.geosGeometry, distance);
     assert(geom);
 
     ShapePoint *point = [[ShapePoint alloc] initWithGeosGeometry:geom];
@@ -120,7 +123,8 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    void *geom = GEOSInterpolateNormalized_r(handle, self.geosHandle, fraction);
+    assert(self.geosGeometry);
+    void *geom = GEOSInterpolateNormalized_r(handle, self.geosGeometry, fraction);
     assert(geom);
 
     ShapePoint *point = [[ShapePoint alloc] initWithGeosGeometry:geom];
@@ -145,27 +149,38 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSCoordSequence *sequence = GEOSCoordSeq_clone_r(handle, GEOSGeom_getCoordSeq_r(handle, self.geosHandle));
+    assert(self.geosGeometry);
+    const GEOSCoordSequence *sequence = GEOSGeom_getCoordSeq_r(handle, self.geosGeometry);
     assert(sequence);
+    
+    GEOSCoordSequence *sequence_clone = GEOSCoordSeq_clone_r(handle, sequence);
+    assert(sequence_clone);
     
     unsigned int count = 0;
     
-    GEOSCoordSeq_getSize_r(handle, sequence, &count);
+    GEOSCoordSeq_getSize_r(handle, sequence_clone, &count);
     
     for (int i=0; i<count; i++)
     {
         double x = 0.0;
         double y = 0.0;
 
-        GEOSCoordSeq_getX_r(handle, sequence, i, &x);
-        GEOSCoordSeq_getY_r(handle, sequence, i, &y);
+        bool didGetX = GEOSCoordSeq_getX_r(handle, sequence_clone, i, &x);
+        bool didGetY = GEOSCoordSeq_getY_r(handle, sequence_clone, i, &y);
 
-        CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(y, x);
-
-        [_geometries addObject:[LocationPoint pointWithCoordinate:coord]];
+        if ( didGetX && didGetY )
+        {
+            CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(y, x);
+            
+            [_geometries addObject:[LocationPoint pointWithCoordinate:coord]];
+        }
+        else
+        {
+            NSLog(@"ShapeKit error: failed to load coordinate (%@)",self.description);
+        }
     }
     
-    GEOSCoordSeq_destroy_r(handle, sequence);
+    GEOSCoordSeq_destroy_r(handle, sequence_clone);
 }
 
 @end

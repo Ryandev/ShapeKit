@@ -32,7 +32,7 @@
     return string;
 }
 
--(GEOSGeom) geosGeom
+-(GEOSGeom) geosGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);

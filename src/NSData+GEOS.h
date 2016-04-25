@@ -14,7 +14,9 @@
 
 +(NSData*) dataWithGEOSGeom:(GEOSGeom)geosGeom;
 
--(GEOSGeom) geosGeom;
++(NSData*) dataWithGEOSGeoms:(NSArray<NSValue*>*)geosGeom;
+
+-(GEOSGeom) geosGeometry;
 
 -(int) geomTypeForWKB;
 

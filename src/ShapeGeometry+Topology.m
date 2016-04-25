@@ -18,7 +18,7 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geometryEnvelope = GEOSEnvelope_r(handle, self.geosHandle);
+    GEOSGeometry *geometryEnvelope = GEOSEnvelope_r(handle, self.geosGeometry);
     assert(geometryEnvelope);
     
     ShapePolygon *polygon = [[ShapePolygon alloc] initWithGeosGeometry:geometryEnvelope];
@@ -31,7 +31,7 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geometryBuffer = GEOSBuffer_r(handle, self.geosHandle, width, 0);
+    GEOSGeometry *geometryBuffer = GEOSBuffer_r(handle, self.geosGeometry, width, 0);
     assert(geometryBuffer);
     
     ShapePolygon *polygon = [[ShapePolygon alloc] initWithGeosGeometry:geometryBuffer];
@@ -44,7 +44,7 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geometryHull = GEOSConvexHull_r(handle, self.geosHandle);
+    GEOSGeometry *geometryHull = GEOSConvexHull_r(handle, self.geosGeometry);
     assert(geometryHull);
     
     ShapePolygon *polygon = [[ShapePolygon alloc] initWithGeosGeometry:geometryHull];
@@ -52,12 +52,12 @@
     return polygon;
 }
 
--(NSString*) relationshipWithGeometry:(ShapeGeometry *)geometry
+-(NSString*) relationshipWithGeometry:(ShapeGeometry*)geometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    char *geometryRelate = GEOSRelate_r(handle, self.geosHandle, geometry.geosHandle);
+    char *geometryRelate = GEOSRelate_r(handle, self.geosGeometry, geometry.geosGeometry);
     
     NSString *relationship = [NSString stringWithUTF8String:geometryRelate];
     
@@ -69,7 +69,7 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geometryCentroid = GEOSGetCentroid_r(handle, self.geosHandle);
+    GEOSGeometry *geometryCentroid = GEOSGetCentroid_r(handle, self.geosGeometry);
     assert(geometryCentroid);
     
     ShapePoint *shapePoint = [[ShapePoint alloc] initWithGeosGeometry:geometryCentroid];
@@ -82,7 +82,7 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geometrySurface = GEOSPointOnSurface_r(handle, self.geosHandle);
+    GEOSGeometry *geometrySurface = GEOSPointOnSurface_r(handle, self.geosGeometry);
     assert(geometrySurface);
     
     ShapePoint *point = [[ShapePoint alloc] initWithGeosGeometry:geometrySurface];
@@ -90,12 +90,12 @@
     return point;
 }
 
--(ShapeGeometry*) intersectionWithGeometry:(ShapeGeometry *)geometryIntersect
+-(ShapeGeometry*) intersectionWithGeometry:(ShapeGeometry*)geometryIntersect
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geometryIntersection = GEOSIntersection_r(handle, self.geosHandle, geometryIntersect.geosHandle);
+    GEOSGeometry *geometryIntersection = GEOSIntersection_r(handle, self.geosGeometry, geometryIntersect.geosGeometry);
     assert(geometryIntersection);
     
     ShapeGeometry *shape = [ShapeGeometry geometryWithGeosGeometry:geometryIntersection];
@@ -103,12 +103,12 @@
     return shape;
 }
 
--(ShapeGeometry*) differenceWithGeometry:(ShapeGeometry *)geometry
+-(ShapeGeometry*) differenceWithGeometry:(ShapeGeometry*)geometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geometryDifference = GEOSDifference_r(handle, self.geosHandle, geometry.geosHandle);
+    GEOSGeometry *geometryDifference = GEOSDifference_r(handle, self.geosGeometry, geometry.geosGeometry);
     assert(geometryDifference);
 
     ShapeGeometry *shape = [ShapeGeometry geometryWithGeosGeometry:geometryDifference];
@@ -121,7 +121,7 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geometryBoundary = GEOSBoundary_r(handle, self.geosHandle);
+    GEOSGeometry *geometryBoundary = GEOSBoundary_r(handle, self.geosGeometry);
     assert(geometryBoundary);
     
     ShapeGeometry *shape = [ShapeGeometry geometryWithGeosGeometry:geometryBoundary];
@@ -129,12 +129,12 @@
     return shape;
 }
 
--(ShapeGeometry *)unionWithGeometry:(ShapeGeometry *)geometry
+-(ShapeGeometry *)unionWithGeometry:(ShapeGeometry*)geometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSGeometry *geometryUnion = GEOSUnion_r(handle, self.geosHandle, geometry.geosHandle);
+    GEOSGeometry *geometryUnion = GEOSUnion_r(handle, self.geosGeometry, geometry.geosGeometry);
     assert(geometryUnion);
     
     ShapeGeometry *shape = [ShapeGeometry geometryWithGeosGeometry:geometryUnion];

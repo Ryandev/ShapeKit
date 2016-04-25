@@ -43,7 +43,7 @@
     return self;
 }
 
--(id) initWithGeosGeometry:(void*)geom
+-(id) initWithGeosGeometry:(GEOSGeometry*)geom
 {
     if (( [super initWithGeosGeometry:geom] ))
     {
@@ -85,7 +85,8 @@
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
-    GEOSCoordSequence *sequence = GEOSCoordSeq_clone_r(handle, GEOSGeom_getCoordSeq_r(handle, self.geosHandle));
+    assert(self.geosGeometry);
+    GEOSCoordSequence *sequence = GEOSCoordSeq_clone_r(handle, GEOSGeom_getCoordSeq_r(handle, self.geosGeometry));
     assert(sequence);
     
     double x = 0.0;

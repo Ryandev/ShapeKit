@@ -17,18 +17,25 @@
  @brief ShapeGeometry is an abstract class that holds generic information about your geometry.
  */
 @interface ShapeGeometry : NSObject
+{
+@protected
+    NSString *_geomType;
+    NSString *_projDefinition;
+    GEOSGeometry *_geosGeometry;
+    NSMutableArray <LocationPoint*> *_coordinates;
+}
 
 @property (readonly, copy) NSString *wkt;
 @property (readonly, copy) NSString *wkb;
 @property (readonly, copy) NSString *geomType;
 @property (readonly, copy) NSString *projDefinition;
-@property (readonly) void *geosHandle;
+@property (readonly) GEOSGeometry *geosGeometry;
 @property (readonly) NSArray <LocationPoint*> *coordinates;
 
 
 -(id) initWithWKT:(NSString*)wkt;
 -(id) initWithWKB:(NSData*)wkb;
--(id) initWithGeosGeometry:(void*)geom;
+-(id) initWithGeosGeometry:(GEOSGeometry*)geom;
 
 +(instancetype) geometryWithWKT:(NSString*)wkt;
 +(instancetype) geometryWithWKB:(NSData*)wkb;

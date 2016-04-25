@@ -50,4 +50,9 @@
     return [[LocationPoint alloc] initWithCoordinate:coordinate];
 }
 
+-(NSString*) description
+{
+    return [NSString stringWithFormat:@"<%@ %3.3f, %3.3f>",NSStringFromClass(self.class),self.coordinate.latitude,self.coordinate.longitude];
+}
+
 @end

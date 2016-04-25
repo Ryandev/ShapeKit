@@ -8,6 +8,7 @@
 
 #import "NSData+GEOS.h"
 #import <geos/GEOSHelper.h>
+#import "NSArray+GEOSGeometryCollection.h"
 
 
 @implementation NSData (GEOS)
@@ -23,7 +24,7 @@
     
     size_t len = 0;
     
-    unsigned char *buffer = GEOSGeomToWKB_buf(geosGeom, &len);
+    unsigned char *buffer = GEOSGeomToWKB_buf_r(handle, geosGeom, &len);
     
     NSData *data = [NSData dataWithBytes:buffer length:len];
     
@@ -32,7 +33,24 @@
     return data;
 }
 
--(GEOSGeom) geosGeom
++(NSData*) dataWithGEOSGeoms:(NSArray<NSValue*>*)geosGeoms
+{
+    assert(geosGeoms);
+    
+    /* initialize geos geom if not already */
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
+    
+    GEOSGeometry *geomCollection = geosGeoms.geometryCollection;
+    
+    NSData *data = [self dataWithGEOSGeom:geomCollection];
+    
+    GEOSFree_r(handle, geomCollection);
+    
+    return data;
+}
+
+-(GEOSGeom) geosGeometry
 {
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
