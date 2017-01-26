@@ -55,22 +55,20 @@
 
 -(id) initWithCoordinate:(CLLocationCoordinate2D)coordinate
 {
-    if (( self = [super init] ))
+    GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
+    assert(handle);
+    
+    GEOSCoordSequence *sequence = GEOSCoordSeq_create_r(handle, 1,2);
+    
+    GEOSCoordSeq_setX_r(handle, sequence, 0, coordinate.longitude);
+    GEOSCoordSeq_setY_r(handle, sequence, 0, coordinate.latitude);
+    
+    GEOSGeometry *geosGeom = GEOSGeom_createPoint_r(handle, sequence);
+    NSAssert(geosGeom, @"Error creating ShapeKitPoint");
+    
+    if (( self = [super initWithGeosGeometry:geosGeom] ))
     {
-        GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
-        assert(handle);
-        
-        GEOSCoordSequence *sequence = GEOSCoordSeq_create_r(handle, 1,2);
-
-        GEOSCoordSeq_setX_r(handle, sequence, 0, coordinate.longitude);
-        GEOSCoordSeq_setY_r(handle, sequence, 0, coordinate.latitude);
-        
-        GEOSGeometry *geosGeom = GEOSGeom_createPoint_r(handle, sequence);
-        assert(geosGeom);
-        
-        NSAssert(geosGeom, @"Error creating ShapeKitPoint");
-        
-        [self setValue:(__bridge id _Nullable)(geosGeom) forKey:@"_geosHandle"];
+        _coordinate = coordinate;
     }
     
     return self;
@@ -90,7 +88,7 @@
     assert(sequence);
     
     double x = 0.0;
-    double y = 0.0f;
+    double y = 0.0;
 
     GEOSCoordSeq_getX_r(handle, sequence, 0, &x);
     GEOSCoordSeq_getY_r(handle, sequence, 0, &y);
