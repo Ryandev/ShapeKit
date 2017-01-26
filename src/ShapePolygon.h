@@ -12,7 +12,7 @@
 
 @interface ShapePolygon : ShapeGeometry
 
-@property (readonly) NSArray *interiors;
+@property (readonly) NSArray<ShapePolygon*> *interiors;
 
 -(id) initWithCoordinates:(NSArray<LocationPoint*>*)coordinates;
 

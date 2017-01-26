@@ -13,8 +13,7 @@
 @interface ShapePolygon ()
 {
 @private
-    NSMutableArray *_interiors;
-    NSMutableArray *_exteriors;
+    NSMutableArray <ShapePolygon*> *_interiors;
 }
 @end
 
@@ -22,11 +21,6 @@
 @implementation ShapePolygon
 
 @synthesize interiors = _interiors;
-
--(NSArray*) coordinates
-{
-    return _exteriors;
-}
 
 - (id)initWithWKB:(NSData*)wkb
 {
@@ -87,8 +81,6 @@
 
 -(void) _loadInteriorRings
 {
-    _exteriors = [NSMutableArray new];
-    
     GEOSCoordSequence *sequence = nil;
 
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
@@ -107,7 +99,7 @@
         
         unsigned int numCoordsInt = 0;
         GEOSCoordSeq_getSize_r(handle, sequence, &numCoordsInt);
-        NSMutableArray *coords = [NSMutableArray new];
+        NSMutableArray <LocationPoint*> *coords = [NSMutableArray new];
         
         for (int i=0; i<numCoordsInt; i++)
         {
@@ -126,7 +118,7 @@
             }
             else
             {
-                coords[i] = [NSNull null];
+                coords[i] = (id)[NSNull null];
                 NSLog(@"ShapeKit error: failed to load coordinate (%@)",self.description);
             }
         }
@@ -142,8 +134,6 @@
 
 -(void) _loadExteriorRing
 {
-    _exteriors = [NSMutableArray new];
-    
     GEOSContextHandle_t handle = [GEOSHelper sharedInstance].handle;
     assert(handle);
     
@@ -164,7 +154,8 @@
         GEOSCoordSeq_getX_r(handle, sequence, i, &x);
         GEOSCoordSeq_getY_r(handle, sequence, i, &y);
         
-        [_exteriors addObject:[LocationPoint pointWithCoordinate:CLLocationCoordinate2DMake(y, x)]];
+        LocationPoint *point = [LocationPoint pointWithCoordinate:CLLocationCoordinate2DMake(y, x)];
+        [_coordinates addObject:point];
     }
     
     GEOSCoordSeq_destroy_r(handle, sequence);
