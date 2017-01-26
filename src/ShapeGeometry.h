@@ -26,7 +26,7 @@
 }
 
 @property (readonly, copy) NSString *wkt;
-@property (readonly, copy) NSString *wkb;
+@property (readonly, copy) NSData *wkb;
 @property (readonly, copy) NSString *geomType;
 @property (readonly, copy) NSString *projDefinition;
 @property (readonly) GEOSGeometry *geosGeometry;
