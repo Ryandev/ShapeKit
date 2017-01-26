@@ -34,11 +34,15 @@ double projectedPosition = [myLine distanceFromOriginToProjectionOfPoint:myPoint
 
 ### Carthage
 ```
-github 'Ryandev/proj4' == 4.9.2
-github 'Ryandev/geos' == 3.5.0
-github 'Ryandev/ShapeKit' == 0.1
+github "Ryandev/proj4"
+github "Ryandev/geos"
+github "Ryandev/ShapeKit"
 
 ```
+
+### Build Settings
+Change:
+Target->'Allow Non-modular Includes in Framework Modules' = YES
 
 ## Attribution
 This fork is based on the [original repository](https://github.com/mweisman/ShapeKit) by Michael Weisman, with major customizations by [Andrea Cremaschi](https://github.com/andreacremaschi) and [myself](https://www.github.com/Ryandev)
