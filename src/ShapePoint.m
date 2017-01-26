@@ -69,6 +69,7 @@
     if (( self = [super initWithGeosGeometry:geosGeom] ))
     {
         _coordinate = coordinate;
+        [_coordinates addObject:[LocationPoint pointWithCoordinate:coordinate]];
     }
     
     return self;
