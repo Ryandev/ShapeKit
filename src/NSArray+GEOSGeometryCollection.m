@@ -1,3 +1,9 @@
+/**
+ @file ShapeKit
+ @author Michael Weisman
+ @editor Ryan Powell
+ @license GNU Lesser General Public Licence
+ */
 
 
 #import "NSArray+GEOSGeometryCollection.h"
@@ -6,7 +12,6 @@
 
 
 @implementation NSArray (GEOSGeometryCollection)
-
 
 -(GEOSGeometry*) geometryCollection
 {
@@ -66,6 +71,5 @@
 
     return geomCollection;
 }
-
 
 @end

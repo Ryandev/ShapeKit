@@ -1,3 +1,9 @@
+/**
+ @file ShapeKit
+ @author Michael Weisman
+ @editor Ryan Powell
+ @license GNU Lesser General Public Licence
+ */
 
 
 #import <Foundation/Foundation.h>
