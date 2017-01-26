@@ -5,6 +5,8 @@ xcode_project: ShapeKit.xcodeproj
 xcode_scheme: ShapeKit
 
 before_install:
-  - brew install carthage
+  - brew install carthage || true
+
+install:
   - carthage update
 
