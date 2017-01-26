@@ -3,6 +3,7 @@
 
 [![Build Status](https://api.travis-ci.org/Ryandev/ShapeKit.svg)](https://travis-ci.org/Ryandev/Shapekit)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![License](https://img.shields.io/:license-gpl-blue.svg)](https://raw.githubusercontent.com/mweisman/ShapeKit/master/COPYING)
 
 ShapeKit is a iOS/OSX library that offers an Objective-C interface to the powerful [GEOS](http://trac.osgeo.org/geos/) library.
 Through GEOS, ShapeKit includes all the OpenGIS Simple Features for SQL spatial predicate functions and spatial operators, as well as specific JTS enhanced topology functions.
